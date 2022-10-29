@@ -1,0 +1,51 @@
+<p>Races with basic attributes</p>
+
+<table *ngFor="let race of races">
+    <caption>{{race.name}}</caption>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Weapon skill</td>
+        <td>{{race.stats.basicWeaponSkill}}</td>
+    </tr>
+    <tr>
+        <td>Ballistic skill</td>
+        <td>{{race.stats.basicBallisticSkill}}</td>
+    </tr>
+    <tr>
+        <td>Strength</td>
+        <td>{{race.stats.basicStrength}}</td>
+    </tr>
+    <tr>
+        <td>Toughness</td>
+        <td>{{race.stats.basicToughness}}</td>
+    </tr>
+    <tr>
+        <td>Agility</td>
+        <td>{{race.stats.basicAgility}}</td>
+    </tr>
+    <tr>
+        <td>Intelligence</td>
+        <td>{{race.stats.basicIntelligence}}</td>
+    </tr>
+    <tr>
+        <td>Will Power</td>
+        <td>{{race.stats.basicWillPower}}</td>
+    </tr>
+    <tr>
+        <td>Fellowship</td>
+        <td>{{race.stats.basicFellowship}}</td>
+    </tr>
+    <tr>
+        <td>Maximum wounds</td>
+        <td>{{race.stats.maxWounds}}</td>
+    </tr>
+    <tr>
+        <td>Movement speed</td>
+        <td>{{race.stats.movement}}</td>
+    </tr>
+</table>
+
+<button class="btn btn-primary" type="submit">Click me!</button>
