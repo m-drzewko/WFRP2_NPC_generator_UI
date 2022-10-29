@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'wfrp_npc_generatorr';
+  title = 'wfrp_npc_generator';
 }
