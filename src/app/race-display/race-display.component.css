@@ -1,0 +1,9 @@
+table {
+    caption-side: top;
+}
+
+caption {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
