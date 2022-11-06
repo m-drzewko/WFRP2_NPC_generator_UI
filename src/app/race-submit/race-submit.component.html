@@ -1,1 +1,23 @@
-<p>race-submit works!</p>
+<h2>Submit new race:</h2>
+<form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+    <label for="name">Race name: </label>
+    <input id="name" type="text" formControlName="name" required>
+    <div formGroupName="statsDto">
+        <h4>Statistics:</h4>
+
+        <label for="weaponSkill">Weapon Skill: </label><input id="weaponSkill" type="number" formControlName="basicWeaponSkill" required>
+        <label for="ballisticSkill">Ballistic Skill: </label><input id="ballisticSkill" type="number" formControlName="basicBallisticSkill" required>
+        <label for="strength">Strength: </label><input id="strength" type="number" formControlName="basicStrength" required>
+        <label for="toughness">Toughness: </label><input id="toughness" type="number" formControlName="basicToughness" required>
+        <label for="agility">Agility: </label><input id="agility" type="number" formControlName="basicAgility" required>
+        <label for="intelligence">Intelligence: </label><input id="intelligence" type="number" formControlName="basicIntelligence" required>
+        <label for="willPower">Will Power: </label><input id="willPower" type="number" formControlName="basicWillPower" required>
+        <label for="fellowship">Fellowship: </label><input id="fellowship" type="number" formControlName="basicFellowship" required>
+        <label for="maxWounds">Maximum Wounds: </label><input id="maxWounds" type="number" formControlName="maxWounds" required>
+        <label for="movement">Movement: </label><input id="movement" type="number" formControlName="movement" required>
+
+    </div>
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!raceForm.valid">Submit</button>
+</form>

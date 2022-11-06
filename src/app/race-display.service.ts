@@ -18,26 +18,12 @@ export class RaceDisplayService {
         return this.httpClient.get<Race[]>(this.getAllRacesUrl)
         .pipe(
             tap(data => console.log(data))
-        )
+        );
     }
 
-    postRace() {
-        return this.httpClient.post(this.postRaceUrl,
-            {
-                "name": "Dwarf",
-                "statsDto": {
-                    "basicWeaponSkill": 30,
-                    "basicBallisticSkill": 20,
-                    "basicStrength": 20,
-                    "basicToughness": 30,
-                    "basicAgility": 10,
-                    "basicIntelligence": 20,
-                    "basicWillPower": 20,
-                    "basicFellowship": 10,
-                    "maxWounds": 12,
-                    "movement": 3
-                }
-            }
-        )
-    }
+    // postRace(formData: Object): Observable<Race> {
+    //     let jsonData = JSON.stringify(formData);
+    //     console.log(jsonData);
+    //     return this.httpClient.post(this.postRaceUrl, jsonData);
+    // }
 }
