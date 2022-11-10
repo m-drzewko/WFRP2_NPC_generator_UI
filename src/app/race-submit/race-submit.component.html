@@ -1,12 +1,32 @@
+
 <h2>Submit new race:</h2>
-<form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+<form class="card" [formGroup]="raceForm" (ngSubmit)="onSubmit()">
     <label for="name">Race name: </label>
     <input id="name" type="text" formControlName="name" required>
     <div formGroupName="statsDto">
         <h4>Statistics:</h4>
 
-        <label for="weaponSkill">Weapon Skill: </label><input id="weaponSkill" type="number" formControlName="basicWeaponSkill" required>
-        <label for="ballisticSkill">Ballistic Skill: </label><input id="ballisticSkill" type="number" formControlName="basicBallisticSkill" required>
+        <div class="container text-center">
+            <div class="row justify-content-start">
+              <div class="col-6">
+                <div class="mb-3">
+                    <label for="weaponSkill" class="form-label">
+                        Weapon Skill: 
+                    </label>
+                    <input id="weaponSkill" class="form-control" type="number" formControlName="basicWeaponSkill" required>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mb-3">
+                    <label for="ballisticSkill" class="form-label">
+                        Ballistic Skill: 
+                    </label>
+                    <input id="ballisticSkill" class="form-control" type="number" formControlName="basicBallisticSkill" required>
+                </div>
+              </div>
+            </div>
+        </div>
+
         <label for="strength">Strength: </label><input id="strength" type="number" formControlName="basicStrength" required>
         <label for="toughness">Toughness: </label><input id="toughness" type="number" formControlName="basicToughness" required>
         <label for="agility">Agility: </label><input id="agility" type="number" formControlName="basicAgility" required>

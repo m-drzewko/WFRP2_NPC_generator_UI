@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Race } from '../race';
 import { RaceDisplayService } from '../race-display.service';
 
 @Component({
@@ -10,18 +11,18 @@ import { RaceDisplayService } from '../race-display.service';
 export class RaceSubmitComponent implements OnInit {
 
   raceForm = this.formBuilder.nonNullable.group({
-    name: ['', Validators.required],
+    name: ['test', Validators.required],
     statsDto: this.formBuilder.nonNullable.group({
-      basicWeaponSkill: ['', Validators.required],
-      basicBallisticSkill: ['', Validators.required],
-      basicStrength: ['', Validators.required],
-      basicToughness: ['', Validators.required],
-      basicAgility: ['', Validators.required],
-      basicIntelligence: ['', Validators.required],
-      basicWillPower: ['', Validators.required],
-      basicFellowship: ['', Validators.required],
-      maxWounds: ['', Validators.required],
-      movement: ['', Validators.required]      
+      basicWeaponSkill: [0, Validators.required],
+      basicBallisticSkill: [0, Validators.required],
+      basicStrength: [0, Validators.required],
+      basicToughness: [0, Validators.required],
+      basicAgility: [0, Validators.required],
+      basicIntelligence: [0, Validators.required],
+      basicWillPower: [0, Validators.required],
+      basicFellowship: [0, Validators.required],
+      maxWounds: [0, Validators.required],
+      movement: [0, Validators.required]      
     })
   })
   
@@ -29,7 +30,10 @@ export class RaceSubmitComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   onSubmit(): void {
-    // this.raceDisplayService.postRace(this.raceForm.value);
+    let raceFromForm: Race = this.raceForm.value;
+    console.log(raceFromForm);
+    this.raceDisplayService.postRace(raceFromForm)
+      .subscribe();
   }
 
   ngOnInit(): void {
