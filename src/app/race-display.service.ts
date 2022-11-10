@@ -21,9 +21,7 @@ export class RaceDisplayService {
         );
     }
 
-    // postRace(formData: Object): Observable<Race> {
-    //     let jsonData = JSON.stringify(formData);
-    //     console.log(jsonData);
-    //     return this.httpClient.post(this.postRaceUrl, jsonData);
-    // }
+    postRace(formData: Race): Observable<Race> {
+        return this.httpClient.post<any>(this.postRaceUrl, formData);
+    }
 }
