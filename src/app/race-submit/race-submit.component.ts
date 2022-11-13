@@ -11,8 +11,8 @@ import { RaceDisplayService } from '../race-display.service';
 export class RaceSubmitComponent implements OnInit {
 
   raceForm = this.formBuilder.nonNullable.group({
-    name: ['test', Validators.required],
-    statsDto: this.formBuilder.nonNullable.group({
+    name: ['', Validators.required],
+    stats: this.formBuilder.nonNullable.group({
       basicWeaponSkill: [0, Validators.required],
       basicBallisticSkill: [0, Validators.required],
       basicStrength: [0, Validators.required],
@@ -30,7 +30,21 @@ export class RaceSubmitComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   onSubmit(): void {
-    let raceFromForm: Race = this.raceForm.value;
+    let raceFromForm: Race = {
+      name: this.raceForm.controls.name.value,
+      stats: {
+        basicWeaponSkill: this.raceForm.controls.stats.controls.basicWeaponSkill.value,
+        basicBallisticSkill: this.raceForm.controls.stats.controls.basicBallisticSkill.value,
+        basicStrength: this.raceForm.controls.stats.controls.basicStrength.value,
+        basicToughness: this.raceForm.controls.stats.controls.basicToughness.value,
+        basicAgility: this.raceForm.controls.stats.controls.basicAgility.value,
+        basicIntelligence: this.raceForm.controls.stats.controls.basicIntelligence.value,
+        basicWillPower: this.raceForm.controls.stats.controls.basicWillPower.value,
+        basicFellowship: this.raceForm.controls.stats.controls.basicFellowship.value,
+        maxWounds: this.raceForm.controls.stats.controls.maxWounds.value,
+        movement: this.raceForm.controls.stats.controls.movement.value
+      }
+    };
     console.log(raceFromForm);
     this.raceDisplayService.postRace(raceFromForm)
       .subscribe();

@@ -3,7 +3,7 @@
 <form class="card" [formGroup]="raceForm" (ngSubmit)="onSubmit()">
     <label for="name">Race name: </label>
     <input id="name" type="text" formControlName="name" required>
-    <div formGroupName="statsDto">
+    <div formGroupName="stats">
         <h4>Statistics:</h4>
 
         <div class="container text-center">
