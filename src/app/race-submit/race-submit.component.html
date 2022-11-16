@@ -1,1 +1,43 @@
-<p>race-submit works!</p>
+
+<h2>Submit new race:</h2>
+<form class="card" [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+    <label for="name">Race name: </label>
+    <input id="name" type="text" formControlName="name" required>
+    <div formGroupName="stats">
+        <h4>Statistics:</h4>
+
+        <div class="container text-center">
+            <div class="row justify-content-start">
+              <div class="col-6">
+                <div class="mb-3">
+                    <label for="weaponSkill" class="form-label">
+                        Weapon Skill: 
+                    </label>
+                    <input id="weaponSkill" class="form-control" type="number" formControlName="basicWeaponSkill" required>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mb-3">
+                    <label for="ballisticSkill" class="form-label">
+                        Ballistic Skill: 
+                    </label>
+                    <input id="ballisticSkill" class="form-control" type="number" formControlName="basicBallisticSkill" required>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <label for="strength">Strength: </label><input id="strength" type="number" formControlName="basicStrength" required>
+        <label for="toughness">Toughness: </label><input id="toughness" type="number" formControlName="basicToughness" required>
+        <label for="agility">Agility: </label><input id="agility" type="number" formControlName="basicAgility" required>
+        <label for="intelligence">Intelligence: </label><input id="intelligence" type="number" formControlName="basicIntelligence" required>
+        <label for="willPower">Will Power: </label><input id="willPower" type="number" formControlName="basicWillPower" required>
+        <label for="fellowship">Fellowship: </label><input id="fellowship" type="number" formControlName="basicFellowship" required>
+        <label for="maxWounds">Maximum Wounds: </label><input id="maxWounds" type="number" formControlName="maxWounds" required>
+        <label for="movement">Movement: </label><input id="movement" type="number" formControlName="movement" required>
+
+    </div>
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!raceForm.valid">Submit</button>
+</form>

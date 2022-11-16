@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Race } from '../race';
-import { RaceDisplayService } from '../race-display.service';
+import { RaceDisplayService } from '../race.service';
 
 @Component({
   selector: 'app-race-display',
