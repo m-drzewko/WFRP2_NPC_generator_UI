@@ -1,5 +1,4 @@
 export interface RaceStats {
-    // id?: number;
     basicWeaponSkill: number;
     basicBallisticSkill: number;
     basicStrength: number;
