@@ -1,16 +1,21 @@
 <!-- Navbar -->
-<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <button class="nav-link active" aria-current="page" href="#">Home</button>
-  </li>
-  <li class="nav-item">
-    <button class="nav-link" routerLink="race-display">Display Races</button>
-  </li>
-  <li class="nav-item">
-    <button class="nav-link" routerLink="race-submit">Submit Race</button>
-  </li>
-  <li class="nav-item">
-</ul>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <ul class="nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Race</a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" routerLink="race-display">Display Races</a></li>
+          <li><a class="dropdown-item" routerLink="race-submit">Submit Race</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- Body -->
 <div>
