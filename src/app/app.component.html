@@ -1,9 +1,21 @@
-<!-- Toolbar -->
-<div>
-  <span>Welcome</span>
-  <span routerLink='race-submit'>Submit</span>
-  <span routerLink='race-display'>Display</span>
-</div>
+<!-- Navbar -->
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <ul class="nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Race</a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" routerLink="race-display">Display Races</a></li>
+          <li><a class="dropdown-item" routerLink="race-submit">Submit Race</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- Body -->
 <div>
