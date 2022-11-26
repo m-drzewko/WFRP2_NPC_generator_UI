@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { Race } from '../race';
 import { RaceDisplayService } from '../race.service';
 
@@ -12,7 +13,7 @@ export class RaceSubmitComponent implements OnInit {
 
   raceForm: FormGroup;
   
-  constructor(private raceDisplayService: RaceDisplayService,
+  constructor(private raceDisplayService: RaceDisplayService, 
     private formBuilder: FormBuilder) {
       this.raceForm = this.formBuilder.nonNullable.group({
         name: ['', Validators.required],
