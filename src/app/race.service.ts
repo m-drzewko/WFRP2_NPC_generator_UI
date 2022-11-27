@@ -8,7 +8,7 @@ import { Race } from "./race";
 @Injectable({
     providedIn: 'root'
 })
-export class RaceDisplayService {
+export class RaceService {
 
     private getAllRacesUrl = 'http://localhost:8080/races';
     private postRaceUrl = 'http://localhost:8080/races/new';
