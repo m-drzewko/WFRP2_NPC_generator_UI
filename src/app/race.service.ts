@@ -15,6 +15,12 @@ export class RaceService {
 
     constructor(private httpClient: HttpClient, private translate: TranslateService) { }
 
+    //both getRaces() and postRace() now send also a header
+    //to the backend as part of the request;
+    //this will be kept as an example for now,
+    //but will probably only come in handy later
+    //when character generation is in place
+
     getRaces(): Observable<Race[]> {
         let headers = new HttpHeaders()
             .set('Accept-Language', this.translate.currentLang);
