@@ -12,7 +12,9 @@ import { RaceService } from '../race.service';
 export class RaceSubmitComponent implements OnInit {
 
   raceForm: FormGroup;
-  
+  //TODO: change all zeroes into <Number>, 
+  //as this sets the field to accept numbers only,
+  //but does not fill in any number when the form is built 
   constructor(private raceService: RaceService, 
     private formBuilder: FormBuilder) {
       this.raceForm = this.formBuilder.nonNullable.group({
