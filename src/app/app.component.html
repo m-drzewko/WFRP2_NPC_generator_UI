@@ -7,11 +7,21 @@
         <a class="nav-link active" aria-current="page" href="#">Home</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Race</a>
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'navigation.race' | translate }}</a>
         <ul class="dropdown-menu dropdown-menu-dark">
-          <li><a class="dropdown-item" routerLink="race-display">Display Races</a></li>
-          <li><a class="dropdown-item" routerLink="race-submit">Submit Race</a></li>
+          <li>
+            <a class="dropdown-item" routerLink="race-display"> {{ 'navigation.display_race' | translate }}</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="race-submit"> {{ 'navigation.submit_race' | translate }} </a>
+          </li>
         </ul>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link active" aria-current="page" (click)="chooseEnglish()">En</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link active" aria-current="page" (click)="choosePolish()">Pl</button>
       </li>
     </ul>
   </div>

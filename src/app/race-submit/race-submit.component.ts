@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { Race } from '../race';
-import { RaceDisplayService } from '../race.service';
+import { RaceService } from '../race.service';
 
 @Component({
   selector: 'app-race-submit',
@@ -11,8 +12,10 @@ import { RaceDisplayService } from '../race.service';
 export class RaceSubmitComponent implements OnInit {
 
   raceForm: FormGroup;
-  
-  constructor(private raceDisplayService: RaceDisplayService,
+  //TODO: change all zeroes into <Number>, 
+  //as this sets the field to accept numbers only,
+  //but does not fill in any number when the form is built 
+  constructor(private raceService: RaceService, 
     private formBuilder: FormBuilder) {
       this.raceForm = this.formBuilder.nonNullable.group({
         name: ['', Validators.required],
@@ -33,7 +36,7 @@ export class RaceSubmitComponent implements OnInit {
 
   onSubmit(): void {
     let raceFromForm: Race = this.raceForm.value;
-    this.raceDisplayService.postRace(raceFromForm)
+    this.raceService.postRace(raceFromForm)
       .subscribe();
   }
 
