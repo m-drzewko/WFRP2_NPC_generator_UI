@@ -1,55 +1,100 @@
-
-<h2>{{ 'submit.submit_new_race' | translate }}:</h2>
-<form class="card" [formGroup]="raceForm" (ngSubmit)="onSubmit()">
-    <label for="name">{{ 'submit.race_name' | translate }}: </label>
-    <input id="name" type="text" formControlName="name" required>
-    <div formGroupName="stats">
-        <h4>{{'submit.statistics' | translate }}:</h4>
-
-        <div class="container text-center">
-            <div class="row justify-content-start">
-              <div class="col-6">
-                <div class="mb-3">
-                    <label for="weaponSkill" class="form-label">{{ 'submit.weapon_skill' | translate }}: </label>
-                    <input id="weaponSkill" class="form-control" type="number" formControlName="basicWeaponSkill" required>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="mb-3">
-                    <label for="ballisticSkill" class="form-label">{{ 'submit.ballistic_skill' | translate }}: </label>
-                    <input id="ballisticSkill" class="form-control" type="number" formControlName="basicBallisticSkill" required>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="container text-center">
-            <div class="row justify-content-start">
-              <div class="col-6">
-                <div class="mb-3">
-                    <label for="strength" class="form-label">{{ 'submit.strength' | translate }}: </label>
-                    <input id="strength" class="form-control" type="number" formControlName="basicStrength" required>            
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="mb-3">
-                    <label for="toughness" class="form-label">{{ 'submit.toughness' | translate }}: </label>
-                    <input id="toughness" class="form-control" type="number" formControlName="basicToughness" required>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        
-        
-        <label for="agility" class="form-label">{{ 'submit.agility' | translate }}: </label><input id="agility" class="form-control" type="number" formControlName="basicAgility" required>
-        <label for="intelligence" class="form-label">{{ 'submit.intelligence' |translate }}: </label><input id="intelligence" class="form-control" type="number" formControlName="basicIntelligence" required>
-        <label for="willPower" class="form-label">{{ 'submit.will_power' | translate }}: </label><input id="willPower" class="form-control" type="number" formControlName="basicWillPower" required>
-        <label for="fellowship" class="form-label">{{ 'submit.fellowship' | translate }}: </label><input id="fellowship" class="form-control" type="number" formControlName="basicFellowship" required>
-        <label for="maxWounds" class="form-label">{{ 'submit.max_wounds' | translate }}: </label><input id="maxWounds" class="form-control" type="number" formControlName="maxWounds" required>
-        <label for="movement" class="form-label">{{ 'submit.movement' | translate }}: </label><input id="movement" class="form-control" type="number" formControlName="movement" required>
-
-    </div>
-
-    <p>{{ 'submit.complete_the_form_to_enable_button' | translate }}</p>
-    <button type="submit" [disabled]="!raceForm.valid">{{ 'submit.submit_button' | translate }}</button>
-</form>
+<div class="card text-bg-dark m-5">
+	<div class="card-body">
+		<h3 class="card-title">{{ 'submit.submit_new_race' | translate }}:</h3>
+		<form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+		  <div class="container text-center mb-3">
+			<label for="name" class="form-label">
+			  <h4>{{ 'submit.race_name' | translate }}:</h4>
+			</label>
+			<input id="name" class="form-control" type="text" formControlName="name" required>
+		  </div>
+		  <div class="container text-center" formGroupName="stats">
+			<h4>{{'submit.statistics' | translate }}:</h4>
+			<div class="container text-center">
+			  <div class="row justify-content-start">
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="weaponSkill" class="form-label">{{ 'submit.weapon_skill' | translate }}:</label>
+					<input id="weaponSkill" class="form-control" type="number" formControlName="basicWeaponSkill" required>
+				  </div>
+				</div>
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="ballisticSkill" class="form-label">{{ 'submit.ballistic_skill' | translate }}: </label>
+					<input id="ballisticSkill" class="form-control" type="number" formControlName="basicBallisticSkill"
+					  required>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="container text-center">
+			  <div class="row justify-content-start">
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="strength" class="form-label">{{ 'submit.strength' | translate }}: </label>
+					<input id="strength" class="form-control" type="number" formControlName="basicStrength" required>
+				  </div>
+				</div>
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="toughness" class="form-label">{{ 'submit.toughness' | translate }}: </label>
+					<input id="toughness" class="form-control" type="number" formControlName="basicToughness" required>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="container text-center">
+			  <div class="row justify-content-start">
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="agility" class="form-label">{{ 'submit.agility' | translate }}:</label>
+					<input id="agility" class="form-control" type="number" formControlName="basicAgility" required>
+				  </div>
+				</div>
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="intelligence" class="form-label">{{ 'submit.intelligence' |translate }}:</label>
+					<input id="intelligence" class="form-control" type="number" formControlName="basicIntelligence" required>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="container text-center">
+			  <div class="row justify-content-start">
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="willPower" class="form-label">{{ 'submit.will_power' | translate }}:</label>
+					<input id="willPower" class="form-control" type="number" formControlName="basicWillPower" required>
+				  </div>
+				</div>
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="fellowship" class="form-label">{{ 'submit.fellowship' | translate }}:</label>
+					<input id="fellowship" class="form-control" type="number" formControlName="basicFellowship" required>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="container text-center">
+			  <div class="row justify-content-start">
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="maxWounds" class="form-label">{{ 'submit.max_wounds' | translate }}:</label>
+					<input id="maxWounds" class="form-control" type="number" formControlName="maxWounds" required>
+				  </div>
+				</div>
+				<div class="col-6">
+				  <div class="mb-3">
+					<label for="movement" class="form-label">{{ 'submit.movement' | translate }}:</label>
+					<input id="movement" class="form-control" type="number" formControlName="movement" required>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		
+		  <p>{{ 'submit.complete_the_form_to_enable_button' | translate }}</p>
+		  <button type="submit" class="btn btn-secondary" [disabled]="!raceForm.valid">{{ 'submit.submit_button' | translate }}</button>
+		</form>
+	</div>
+</div>
