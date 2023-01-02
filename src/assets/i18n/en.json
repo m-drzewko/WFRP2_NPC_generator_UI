@@ -1,5 +1,8 @@
 {
     "navigation": {
+        "home": "Home",
+        "flag_of_uk": "Flag of United Kingdom",
+        "flag_of_pl": "Flag of Poland",
         "race": "Race",
         "display_race": "Display Races",
         "submit_race": "Add Race"

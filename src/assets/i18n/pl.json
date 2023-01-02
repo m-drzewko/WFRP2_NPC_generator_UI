@@ -1,5 +1,8 @@
 {
     "navigation": {
+        "home": "Strona główna",
+        "flag_of_uk": "Flaga Zjednoczonego Królestwa",
+        "flag_of_pl": "Flaga Polski",
 		"race": "Rasa",
         "display_race": "Wyświetl rasy",
         "submit_race": "Dodaj rasę"
