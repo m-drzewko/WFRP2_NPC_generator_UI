@@ -29,27 +29,38 @@
 
 <!-- Body -->
 <div>
-	<div>
-		<h4>Welcome to</h4>
-		<h2>Warhammer FRP 2ED NPC Generator App</h2>
-		<p>This application will enable you to quickly generate a random character for your WFRP session. 
-			Whether you need a courageous human, a stout dwarf, a reclusive elf or jovial halfling,
-			this application will generate a stat block alongside the basic visual characteristics of a character.
-		</p>
+	<h2 class="text-center">{{ 'main.welcome' | translate }}</h2>
+	<div class="d-flex-inline p-5">
+		<p>{{ 'main.first-paragraph' | translate }}</p>
+		<p>{{ 'main.second-paragraph' | translate }}</p>
+		<p>{{ 'main.third-paragraph' | translate }}</p>
+		<p>{{ 'main.fourth-paragraph' | translate }}</p>
 	</div>
-	<div>
-		Roadmap for the future: <br>
-		- create a name generation component <br>
-		- add login functionality <br>
-		- add NPC save feature <br>
-		- add character archetypes to generation parameters <br>
+	<div class="d-flex-inline p-5">
+		<p>
+			{{ 'main.roadmap' | translate }}
+			<ul>
+				<li>
+					{{ 'main.roadmap-point1' | translate }}
+				</li>
+				<li>
+					{{ 'main.roadmap-point2' | translate }}
+				</li>
+				<li>
+					{{ 'main.roadmap-point3' | translate }}
+				</li>
+				<li>
+					{{ 'main.roadmap-point4' | translate }}
+				</li>
+			</ul>
 	</div>
 	<div>
 		<router-outlet></router-outlet>
 	</div>
 
 	<!-- Footer -->
-	<footer>  
+	<footer class="text-center fw-light text-muted bg-light align-text-bottom">
+		<p>{{ 'footer.version' | translate }}</p>
 	</footer>
 
 </div>

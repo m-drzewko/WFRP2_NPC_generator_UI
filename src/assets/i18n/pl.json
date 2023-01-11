@@ -1,4 +1,18 @@
 {
+    "main": {
+        "app-name": "Warhammer FRP 2ED NPC Generator App",
+        "welcome": "Witaj!",
+        "first-paragraph": "Cieszę się, że chcesz skorzystać z mojej aplikacji do generowania postaci niezależnych do Warhammera Fantasy RolePlay 2ed.",
+        "second-paragraph": "Ta aplikacja pozwoli ci szybko wygenerować losową postać niezależną potrzebną ci do sesji. Nie ważne, czy potrzebujesz mężnego człowieka, wytrzymałej krasnoludki, elfki-odludka czy jowialnego niziołka, aplikacja wygeneruje dla ciebie statystyki oraz podstawowe cechy wizualne postaci.",
+        "third-paragraph": "Ta aplikacja powstaje z pasji. Tworzę ją w swoim wolnym czasie w ramach nauki programowania. Weź to pod uwagę prosząc o nowe funkcjonalności lub zgłaszając błędy.",
+        "fourth-paragraph": "Moim celem jest rozwijanie tej aplikacji aż do jej ukończenia i wydania wersji 1.0. Po tym czasie nie planuję jej dalej aktualizować.",
+        "roadmap": "Planowane przyszłe funkcjonalności:",
+        "roadmap-point1": "stworzenie komponentu generującego losowe imiona",
+        "roadmap-point2": "dodanie możliwości logowania",
+        "roadmap-point3": "dodanie możliwości zapisania wygenerowanej postaci na koncie",
+        "roadmap-point4": "dodanie archetypów postaci do parametrów generacji postaci",
+        "fifth-paragraph": "Jeśli chciałbyś zasugerować nową funkcjonalność lub zgłosic błąd, skontaktuj się ze mną przez formularz kontaktowy."
+    },
     "navigation": {
         "home": "Strona główna",
         "flag_of_uk": "Flaga Zjednoczonego Królestwa",
@@ -39,5 +53,8 @@
         "fellowship": "Ogłada",
         "max_wounds": "Maksymalna Żywotność",
         "movement_speed": "Szybkość"
+    },
+    "footer": {
+        "version": "wersja 0.5"
     }
 }
