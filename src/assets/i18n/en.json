@@ -1,5 +1,22 @@
 {
+    "main": {
+        "app-name": "Warhammer FRP 2ED NPC Generator App",
+        "welcome": "Welcome!",
+        "first-paragraph": "I'm glad you want to use this Warhammer Fantasy RolePlay NPC generator app.",
+        "second-paragraph": "This application will enable you to quickly generate a random character for your WFRP session. Whether you need a courageous human, a stout dwarf, a reclusive elf or a jovial halfling, the app will generate a stat block alongside the basic visual characteristics of a character.",
+        "third-paragraph": "This is a passion project created by a fan for other fans. I am making this app in my spare time as means of self-development, so please keep that in mind when asking about new features or reporting bugs.",
+        "fourth-paragraph": "I intend on expanding this application until it reaches version 1.0, at which point it will be completed and no further development should be expected.",
+        "roadmap": "Roadmap for the future:",
+        "roadmap-point1": "create a name generation component",
+        "roadmap-point2": "add login functionality",
+        "roadmap-point3": "add NPC save feature",
+        "roadmap-point4": "add character archetypes to generation parameters",
+        "fifth-paragraph": "If you wish to see some feature added or would like to report a bug, please feel free to contact me using the contact form."
+    },
     "navigation": {
+        "home": "Home",
+        "flag_of_uk": "Flag of United Kingdom",
+        "flag_of_pl": "Flag of Poland",
         "race": "Race",
         "display_race": "Display Races",
         "submit_race": "Add Race"
@@ -36,5 +53,8 @@
         "fellowship": "Fellowship",
         "max_wounds": "Maximum wounds",
         "movement_speed": "Movement speed"
+    },
+    "footer": {
+        "version": "version 0.5"
     }
 }
