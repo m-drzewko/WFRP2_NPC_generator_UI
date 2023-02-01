@@ -9,7 +9,7 @@ import { RaceService } from '../race.service';
 })
 export class RaceDisplayComponent implements OnInit {
 
-  races: Race[] = [];
+  races: Array<Race> = new Array<Race>;
 
   constructor(private raceService: RaceService) { }
 

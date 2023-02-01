@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable, tap } from "rxjs";
 import { Race } from "./race";
-import { RacesResponseObject } from "./races-response-object";
+import { ListResponseObject } from "./response/list-response-object";
 
 
 @Injectable({
@@ -22,11 +22,11 @@ export class RaceService {
     //but will probably only come in handy later
     //when character generation is in place
 
-    getRaces(): Observable<RacesResponseObject> {
+    getRaces(): Observable<ListResponseObject> {
         let headers = new HttpHeaders()
             .set('Accept-Language', this.translate.currentLang);
 
-        return this.httpClient.get<RacesResponseObject>(this.getAllRacesUrl, {
+        return this.httpClient.get<ListResponseObject>(this.getAllRacesUrl, {
             headers: headers
         })
         .pipe(
