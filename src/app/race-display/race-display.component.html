@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-3" *ngFor="let race of races">
             <div class="card m-2 text-bg-dark">
-                <h5 class="card-header">{{ race.name }}</h5>
+                <h5 class="card-header">{{ 'display.race_names.' + race.name | translate }}</h5>
                 <div class="card-body">
                     <table class="table table-dark table-striped table-hover table-bordered tabl-responsive">
                         <thead>
@@ -16,35 +16,35 @@
                         <tbody class="table-group-divider">
                             <tr>
                                 <td>{{ 'display.weapon_skill' | translate }}</td>
-                                <td>{{ race.stats.basicWeaponSkill }}</td>
+                                <td>{{ race.stats.basicWeaponSkill }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.ballistic_skill' | translate }}</td>
-                                <td>{{ race.stats.basicBallisticSkill }}</td>
+                                <td>{{ race.stats.basicBallisticSkill }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.strength' | translate }}</td>
-                                <td>{{ race.stats.basicStrength }}</td>
+                                <td>{{ race.stats.basicStrength }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.toughness' | translate }}</td>
-                                <td>{{ race.stats.basicToughness }}</td>
+                                <td>{{ race.stats.basicToughness }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.agility' | translate }}</td>
-                                <td>{{ race.stats.basicAgility }}</td>
+                                <td>{{ race.stats.basicAgility }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.intelligence' | translate }}</td>
-                                <td>{{ race.stats.basicIntelligence }}</td>
+                                <td>{{ race.stats.basicIntelligence }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.will_power' | translate }}</td>
-                                <td>{{ race.stats.basicWillPower }}</td>
+                                <td>{{ race.stats.basicWillPower }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.fellowship' | translate }}</td>
-                                <td>{{ race.stats.basicFellowship }}</td>
+                                <td>{{ race.stats.basicFellowship }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.max_wounds' | translate }}</td>
@@ -53,6 +53,14 @@
                             <tr>
                                 <td>{{ 'display.movement_speed' | translate }}</td>
                                 <td>{{ race.stats.movement }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'display.hair_colors' | translate }}</td>
+                                <td>{{ race.hairColors.join(', ')}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'display.eye_colors' | translate }}</td>
+                                <td>{{ race.eyeColors.join(', ')}}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -39,6 +39,12 @@
         "submit_button": "Dodaj"
     },
     "display":  {
+        "race_names": {
+            "Dwarf": "Krasnolud",
+            "Elf": "Elf",
+            "Human": "Człowiek",
+            "Halfling": "Niziołek"
+        },
         "races_with_basic_attributes": "Rasy z podstawowymi atrybutami",
         "attribute": "Atrybut",
         "value": "Wartość",
@@ -52,7 +58,10 @@
         "will_power": "Siła woli",
         "fellowship": "Ogłada",
         "max_wounds": "Maksymalna Żywotność",
-        "movement_speed": "Szybkość"
+        "movement_speed": "Szybkość",
+        "hair_colors": "Kolory włosów",
+        "eye_colors": "Kolory oczu",
+        "dice": "2k10"
     },
     "footer": {
         "version": "wersja 0.5"
