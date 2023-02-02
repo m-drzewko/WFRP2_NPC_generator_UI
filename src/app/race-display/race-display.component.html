@@ -56,11 +56,19 @@
                             </tr>
                             <tr>
                                 <td>{{ 'display.hair_colors' | translate }}</td>
-                                <td>{{ race.hairColors.join(', ')}}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li *ngFor="let color of race.hairColors">{{ 'display.colors.' + color | translate }}</li>
+                                    </ul>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{ 'display.eye_colors' | translate }}</td>
-                                <td>{{ race.eyeColors.join(', ')}}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li *ngFor="let color of race.eyeColors">{{ 'display.colors.' + color | translate }}</li>
+                                    </ul>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

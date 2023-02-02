@@ -61,7 +61,26 @@
         "movement_speed": "Movement speed",
         "hair_colors": "Hair colors",
         "eye_colors": "Eye colors",
-        "dice": "2d10"
+        "dice": "2d10",
+        "colors": {
+            "Silver": "Silver",
+            "Ash Blond": "Ash Blond",
+            "Corn": "Corn",
+            "Yellow": "Yellow",
+            "Copper": "Copper",
+            "Light Brown": "Light Brown",
+            "Brown": "Brown",
+            "Dark Brown": "Dark Brown",
+            "Black": "Black",
+            "Grey Blue": "Grey Blue",
+            "Blue": "Blue",
+            "Green": "Green",
+            "Purple": "Purple",
+            "Red": "Red",
+            "Pale Grey": "Pale Grey",
+            "Blue Black": "Blue Black",
+            "Hazel": "Hazel"
+        }
     },
     "footer": {
         "version": "version 0.5"

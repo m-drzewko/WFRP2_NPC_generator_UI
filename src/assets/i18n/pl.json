@@ -61,7 +61,26 @@
         "movement_speed": "Szybkość",
         "hair_colors": "Kolory włosów",
         "eye_colors": "Kolory oczu",
-        "dice": "2k10"
+        "dice": "2k10",
+        "colors": {
+            "Silver": "Srebrny",
+            "Ash Blond": "Popielaty",
+            "Corn": "Jasny blond",
+            "Yellow": "Ciemny blond",
+            "Copper": "Ciemno rudy",
+            "Light Brown": "Jasnobrązowy",
+            "Brown": "Brązowy",
+            "Dark Brown": "Ciemnobrązowy",
+            "Black": "Czarny",
+            "Grey Blue": "Ciemnoniebieski",
+            "Blue": "Niebieski",
+            "Green": "Zielony",
+            "Purple": "Fioletowy",
+            "Red": "Rudy",
+            "Pale Grey": "Szary",
+            "Blue Black": "Kruczoczarny",
+            "Hazel": "Kasztanowy"
+        }
     },
     "footer": {
         "version": "wersja 0.5"
