@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RaceDisplayComponent } from './race-display/race-display.component';
-import { RaceSubmitComponent } from './race-submit/race-submit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -18,7 +17,6 @@ import { HttpClient } from '@angular/common/http';
   declarations: [
     AppComponent,
     RaceDisplayComponent,
-    RaceSubmitComponent
   ],
   imports: [
     BrowserModule,

@@ -32,13 +32,4 @@ export class RaceService {
             tap(data => console.log(data))
         );
     }
-
-    postRace(formData: Race): Observable<Race> {
-        let headers = new HttpHeaders()
-        .set('Accept-Language', this.translate.currentLang);
-
-        return this.httpClient.post<any>(this.postRaceUrl, formData, {
-            headers: headers
-        });
-    }
 }
