@@ -18,25 +18,7 @@
         "flag_of_uk": "Flag of United Kingdom",
         "flag_of_pl": "Flag of Poland",
         "race": "Race",
-        "display_race": "Display Races",
-        "submit_race": "Add Race"
-    },
-    "submit": {
-        "submit_new_race": "Submit new race",
-        "race_name": "Race name",
-        "statistics": "Statistics",
-        "weapon_skill": "Weapon Skill",
-        "ballistic_skill": "Ballistic skill",
-        "strength": "Strenght",
-        "toughness": "Toughness",
-        "agility": "Agility",
-        "intelligence": "Intelligence",
-        "will_power": "Will Power",
-        "fellowship": "Fellowship",
-        "max_wounds": "Maximum wounds",
-        "movement": "Movement",
-        "complete_the_form_to_enable_button": "Complete the form to enable button.",
-        "submit_button": "Submit"
+        "display_race": "Display Races"
     },
     "display":  {
         "race_names": {

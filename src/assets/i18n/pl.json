@@ -18,25 +18,7 @@
         "flag_of_uk": "Flaga Zjednoczonego Królestwa",
         "flag_of_pl": "Flaga Polski",
 		"race": "Rasa",
-        "display_race": "Wyświetl rasy",
-        "submit_race": "Dodaj rasę"
-    },
-    "submit": {
-        "submit_new_race": "Dodaj nową rasę",
-        "race_name": "Nazwa",
-        "statistics": "Statystyki",
-        "weapon_skill": "Walka wręcz",
-        "ballistic_skill": "Umiejętności strzeleckie",
-        "strength": "Krzepa",
-        "toughness": "Wytrzymałość",
-        "agility": "Zręczność",
-        "intelligence": "Inteligencja",
-        "will_power": "Siła woli",
-        "fellowship": "Ogłada",
-        "max_wounds": "Maksymalna Żywotność",
-        "movement": "Szybkość",
-        "complete_the_form_to_enable_button": "Wypełnij cały formularz by aktywować przycisk",
-        "submit_button": "Dodaj"
+        "display_race": "Wyświetl rasy"
     },
     "display":  {
         "race_names": {
