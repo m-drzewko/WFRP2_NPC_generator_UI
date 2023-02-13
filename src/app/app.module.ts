@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 
 
 
@@ -17,6 +18,7 @@ import { HttpClient } from '@angular/common/http';
   declarations: [
     AppComponent,
     RaceDisplayComponent,
+    NpcGenerateComponent,
   ],
   imports: [
     BrowserModule,

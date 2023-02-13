@@ -6,11 +6,19 @@
       		<li class="nav-item">
         		<a class="nav-link active" aria-current="page" href="#"><img src="assets\images\home_white2.png" alt="{{ 'navigation.home' | translate }}"></a>
       		</li>
+			  <li class="nav-item dropdown">
+        		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Generate</a>
+        		<ul class="dropdown-menu dropdown-menu-dark">
+          			<li>
+            			<a class="dropdown-item" routerLink="npc-generate">NPC</a>
+          			</li>
+        		</ul>
+      		</li>
       		<li class="nav-item dropdown">
         		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'navigation.race' | translate }}</a>
         		<ul class="dropdown-menu dropdown-menu-dark">
           			<li>
-            			<a class="dropdown-item" routerLink="race-display"> {{ 'navigation.display_race' | translate }}</a>
+            			<a class="dropdown-item" routerLink="race-display">{{ 'navigation.display_race' | translate }}</a>
           			</li>
         		</ul>
       		</li>
@@ -51,6 +59,7 @@
 				</li>
 			</ul>
 	</div>
+	
 	<div>
 		<router-outlet></router-outlet>
 	</div>

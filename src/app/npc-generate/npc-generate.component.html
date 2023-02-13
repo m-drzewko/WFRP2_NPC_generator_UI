@@ -1,0 +1,25 @@
+<h3>Generate random NPC</h3>
+<p>
+    Use the below drop-downs to choose parameters for generation. If you want the generation to be completely random, leave the drop-downs empty.
+</p>
+
+<div class="container text-center mb-3">
+    <form [formGroup]="npcGenerateForm" (ngSubmit)="onSubmit()">
+        <label for="race" class="form-label">Race</label>
+        <select id="race" formControlName="race">
+            <option value="" selected>Random</option>
+            <option *ngFor="let race of races" value="race.name">{{ 'display.race_names.' + race.name | translate }}</option>
+        </select>
+        <label for="gender" class="form-label">Gender</label>
+        <select id="gender" formControlName="gender">
+            <option value="" selected>Random</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+</div>
+
+<div>
+    PLACEHOLDER 
+</div>
