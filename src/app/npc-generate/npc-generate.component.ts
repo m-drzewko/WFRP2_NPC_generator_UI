@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NpcService } from '../npc-service';
 import { RaceService } from '../race.service';
 import { Race } from '../race';
+import { Npc } from '../npc';
+import { SingleResponseObject } from '../response/single-response-object';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
 	selector: 'app-npc-generate',
@@ -15,8 +18,10 @@ export class NpcGenerateComponent implements OnInit {
 
 	races: Array<Race> = new Array<Race>;
 
+	npc!: Npc;
 
-	constructor(npcService: NpcService,
+
+	constructor(private npcService: NpcService,
 		private raceService: RaceService,
 		private formBuilder: FormBuilder) {
 		this.npcGenerateForm = this.formBuilder.nonNullable.group({
@@ -39,7 +44,16 @@ export class NpcGenerateComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-
+		console.log(this.npcGenerateForm.value);
+		this.npcService.generateNpc(this.npcGenerateForm.get(["race"])?.value, this.npcGenerateForm.get(["gender"])?.value).subscribe(
+			(response: SingleResponseObject) => {
+				console.log(response);
+				this.npc = response.object;
+			}, 
+			(error: HttpErrorResponse) => {
+				console.log(error);
+			}
+		);
 	}
 
 }

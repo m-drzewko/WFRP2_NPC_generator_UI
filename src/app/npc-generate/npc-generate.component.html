@@ -7,12 +7,12 @@
     <form [formGroup]="npcGenerateForm" (ngSubmit)="onSubmit()">
         <label for="race" class="form-label">Race</label>
         <select id="race" formControlName="race">
-            <option value="" selected>Random</option>
-            <option *ngFor="let race of races" value="race.name">{{ 'display.race_names.' + race.name | translate }}</option>
+            <option value="random" selected>Random</option>
+            <option *ngFor="let race of races" value="{{ race.name }}">{{ 'display.race_names.' + race.name | translate }}</option>
         </select>
         <label for="gender" class="form-label">Gender</label>
         <select id="gender" formControlName="gender">
-            <option value="" selected>Random</option>
+            <option value="random" selected>Random</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </select>
@@ -21,5 +21,9 @@
 </div>
 
 <div>
-    PLACEHOLDER 
+    <p>
+        PLACEHOLDER
+    {{ npc.name }}
+    </p>
+    
 </div>
