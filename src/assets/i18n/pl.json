@@ -22,6 +22,7 @@
     },
     "display":  {
         "race_names": {
+            "random": "Losowa",
             "Dwarf": "Krasnolud",
             "Elf": "Elf",
             "Human": "Człowiek",

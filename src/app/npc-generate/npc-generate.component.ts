@@ -15,11 +15,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class NpcGenerateComponent implements OnInit {
 
 	npcGenerateForm: FormGroup;
-
+	default: string = 'random';
+	raceNames: string[] = ['random'];
 	races: Array<Race> = new Array<Race>;
-
 	npc!: Npc;
-
+	serverErrorFlag: boolean = false;
+	isNpcGenerated: boolean = false;
 
 	constructor(private npcService: NpcService,
 		private raceService: RaceService,
@@ -27,14 +28,21 @@ export class NpcGenerateComponent implements OnInit {
 		this.npcGenerateForm = this.formBuilder.nonNullable.group({
 			race: ['', Validators.required],
 			gender: ['', Validators.required]
-		})
+		});
+		this.npcGenerateForm.controls['race'].setValue(this.default, {onlySelf: true});
+		this.npcGenerateForm.controls['gender'].setValue(this.default, {onlySelf: true});
 	}
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
 		this.raceService.getRaces().subscribe(
 			(data) => {
 				this.races = data.object;
 				console.log(this.races);
+				this.races.forEach(race => this.raceNames.push(race.name));
+				console.log(this.raceNames);
+			}, (error: HttpErrorResponse) => {
+				console.log(error.message);
+				this.serverErrorFlag = true;
 			}
 		)
 	}
