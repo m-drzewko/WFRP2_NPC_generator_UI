@@ -51,5 +51,4 @@ export class NpcGenerateComponent implements OnInit {
 			}
 		);
 	}
-
 }
