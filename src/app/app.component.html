@@ -7,7 +7,7 @@
         		<a class="nav-link active" aria-current="page" href="#"><img src="assets\images\home_white2.png" alt="{{ 'navigation.home' | translate }}"></a>
       		</li>
 			  <li class="nav-item dropdown">
-        		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Generate</a>
+        		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'navigation.generate' | translate }}</a>
         		<ul class="dropdown-menu dropdown-menu-dark">
           			<li>
             			<a class="dropdown-item" routerLink="npc-generate">NPC</a>
@@ -60,7 +60,7 @@
 			</ul>
 	</div>
 	
-	<div>
+	<div class="d-flex-inline p-5">
 		<router-outlet></router-outlet>
 	</div>
 

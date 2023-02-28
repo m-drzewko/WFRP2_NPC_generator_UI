@@ -18,7 +18,8 @@
         "flag_of_uk": "Flag of United Kingdom",
         "flag_of_pl": "Flag of Poland",
         "race": "Race",
-        "display_race": "Display Races"
+        "display_race": "Display Races",
+        "generate" : "Generate"
     },
     "display":  {
         "race_names": {
@@ -31,19 +32,29 @@
         "races_with_basic_attributes": "Races with basic attributes",
         "attribute": "Attriute",
         "value": "Value",
-        "statistics": "Statistics",
-        "weapon_skill": "Weapon Skill",
-        "ballistic_skill": "Ballistic skill",
-        "strength": "Strenght",
-        "toughness": "Toughness",
-        "agility": "Agility",
-        "intelligence": "Intelligence",
-        "will_power": "Will Power",
-        "fellowship": "Fellowship",
-        "max_wounds": "Maximum wounds",
-        "movement_speed": "Movement speed",
-        "hair_colors": "Hair colors",
-        "eye_colors": "Eye colors",
+        "statistics": {
+            "statistics": "Statistics",
+            "weapon_skill": "Weapon Skill",
+            "ballistic_skill": "Ballistic skill",
+            "strength": "Strenght",
+            "toughness": "Toughness",
+            "agility": "Agility",
+            "intelligence": "Intelligence",
+            "will_power": "Will Power",
+            "fellowship": "Fellowship",
+            "max_wounds": "Maximum wounds",
+            "movement_speed": "Movement speed",
+            "attacks": "Attacks",
+            "wounds": "Wounds",
+            "strength_bonus": "Strength bonus",
+            "toughness_bonus": "Toughness bonus",
+            "movement": "Movement",
+            "magick": "Magick",
+            "insanity_points": "Insanity points",
+            "fate_points": "Fate points"
+        },
+        "hair_colors": "Hair colours",
+        "eye_colors": "Eye colours",
         "dice": "2d10",
         "colors": {
             "Silver": "Silver",
@@ -63,6 +74,21 @@
             "Pale Grey": "Pale Grey",
             "Blue Black": "Blue Black",
             "Hazel": "Hazel"
+        },
+        "npc": {
+            "title": "Generate random NPC",
+            "paragraph1": "Use the below drop-downs to choose parameters for generation. If you want the generation to be completely random, leave the drop-downs at Random.",
+            "generate" : "Generate",
+            "name": "Name",
+            "race": "Race",
+            "gender": "Gender",
+            "MALE": "Male",
+            "FEMALE": "Female",
+            "hairColor": "Hair Colour",
+            "eyeColor": "Eye Colour",
+            "height": "Height",
+            "weight": "Weight",
+            "age": "Age"
         }
     },
     "footer": {

@@ -53,6 +53,7 @@ export class NpcGenerateComponent implements OnInit {
 			(response: SingleResponseObject) => {
 				console.log(response);
 				this.npc = response.object;
+				this.isNpcGenerated = true;
 			}, 
 			(error: HttpErrorResponse) => {
 				console.log(error);
