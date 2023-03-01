@@ -3,6 +3,11 @@
     {{ 'display.npc.paragraph1' | translate }}
 </p>
 
+<div class="server-error" *ngIf="serverErrorFlag">
+    <h1 style="color:red">{{ 'display.npc.server_error' | translate }}</h1>
+    <p style="color:red">{{ 'display.npc.message' | translate }}</p>
+</div>
+
 <div class="container text-center mb-3">
     <form [formGroup]="npcGenerateForm" (ngSubmit)="onSubmit()">
         <label for="race" class="form-label">{{ 'display.npc.race' | translate }}</label>
@@ -94,8 +99,4 @@
             </tbody>
         </table>
     </div>
-</div>
-
-<div *ngIf="serverErrorFlag">
-    Server error
 </div>

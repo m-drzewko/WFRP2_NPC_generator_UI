@@ -88,7 +88,9 @@
             "eyeColor": "Eye Colour",
             "height": "Height",
             "weight": "Weight",
-            "age": "Age"
+            "age": "Age",
+            "server_error": "Server error!",
+            "message": "Server is currently unavailable. Please try again later."
         }
     },
     "footer": {

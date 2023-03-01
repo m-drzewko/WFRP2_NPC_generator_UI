@@ -88,7 +88,9 @@
             "eyeColor": "Kolor oczu",
             "height": "Wzrost",
             "weight": "Waga",
-            "age": "Wiek"
+            "age": "Wiek",
+            "server_error": "Błąd serwera!",
+            "message": "Serwer nie odpowiada. Spróbuj ponownie później."
         }
     },
     "footer": {
