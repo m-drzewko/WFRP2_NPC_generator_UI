@@ -1,7 +1,12 @@
 <div>
     <h3>{{ 'display.races_with_basic_attributes' | translate }}</h3>
 
-    <div class="row">
+    <div class="card server-error" *ngIf="serverErrorFlag">
+        <h1>{{ 'display.npc.server_error' | translate }}</h1>
+        <p>{{ 'display.npc.message' | translate }}</p>
+    </div>
+
+    <div class="row" *ngIf="!serverErrorFlag">
         <div class="col-md-3" *ngFor="let race of races">
             <div class="card m-2 text-bg-dark">
                 <h5 class="card-header">{{ 'display.race_names.' + race.name | translate }}</h5>

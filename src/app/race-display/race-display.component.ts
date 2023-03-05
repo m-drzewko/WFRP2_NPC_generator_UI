@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Race } from '../race';
 import { RaceService } from '../race.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
 	selector: 'app-race-display',
@@ -10,6 +11,7 @@ import { RaceService } from '../race.service';
 export class RaceDisplayComponent implements OnInit {
 
 	races: Array<Race> = new Array<Race>;
+	serverErrorFlag: boolean = false;
 
 	constructor(private raceService: RaceService) { }
 
@@ -22,6 +24,9 @@ export class RaceDisplayComponent implements OnInit {
 					race.hairColors = race.hairColors.filter((value, index) => race.hairColors.indexOf(value) === index)
 				})
 				console.log(this.races);
+			}, (error: HttpErrorResponse) => {
+				console.log(error.message);
+				this.serverErrorFlag = true;
 			}
 		)
 	}
