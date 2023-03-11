@@ -60,4 +60,9 @@ export class NpcGenerateComponent implements OnInit {
 			}
 		);
 	}
+
+	onClick(): void {
+		console.log("switching flag " + this.serverErrorFlag);
+		this.serverErrorFlag = false;
+	}
 }

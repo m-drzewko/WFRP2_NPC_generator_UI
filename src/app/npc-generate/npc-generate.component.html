@@ -1,6 +1,9 @@
-<div class="card server-error" *ngIf="serverErrorFlag">
-    <h1>{{ 'display.npc.server_error' | translate }}</h1>
-    <p>{{ 'display.npc.message' | translate }}</p>
+<div class="card server-error" style="width: 20rem" *ngIf="serverErrorFlag">
+    <div class="card-body">
+        <button type="button" class="btn btn-secondary col-1" (click)="onClick()">X</button>
+        <h1 class="card-title">{{ 'display.npc.server_error' | translate }}</h1>
+        <p class="card-text">{{ 'display.npc.message' | translate }}</p>
+    </div>
 </div>
 
 <h3>{{ 'display.npc.title' | translate }}</h3>
