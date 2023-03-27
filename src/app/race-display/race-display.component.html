@@ -1,12 +1,20 @@
 <div>
     <h3>{{ 'display.races_with_basic_attributes' | translate }}</h3>
 
-    <div class="row">
+    <div class="card server-error" style="width: 20rem" *ngIf="serverErrorFlag">
+        <div class="card-body">
+            <button type="button" class="btn btn-secondary col-1" (click)="onClick()">X</button>
+            <h1 class="card-title">{{ 'display.npc.server_error' | translate }}</h1>
+            <p class="card-text">{{ 'display.npc.message' | translate }}</p>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!serverErrorFlag">
         <div class="col-md-3" *ngFor="let race of races">
             <div class="card m-2 text-bg-dark">
                 <h5 class="card-header">{{ 'display.race_names.' + race.name | translate }}</h5>
                 <div class="card-body">
-                    <table class="table table-dark table-striped table-hover table-bordered tabl-responsive">
+                    <table class="table table-dark table-striped table-hover table-bordered table-responsive">
                         <thead>
                             <tr>
                                 <th>{{ 'display.attribute' | translate }}</th>
@@ -15,43 +23,43 @@
                         </thead>
                         <tbody class="table-group-divider">
                             <tr>
-                                <td>{{ 'display.weapon_skill' | translate }}</td>
+                                <td>{{ 'display.statistics.weapon_skill' | translate }}</td>
                                 <td>{{ race.stats.basicWeaponSkill }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.ballistic_skill' | translate }}</td>
+                                <td>{{ 'display.statistics.ballistic_skill' | translate }}</td>
                                 <td>{{ race.stats.basicBallisticSkill }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.strength' | translate }}</td>
+                                <td>{{ 'display.statistics.strength' | translate }}</td>
                                 <td>{{ race.stats.basicStrength }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.toughness' | translate }}</td>
+                                <td>{{ 'display.statistics.toughness' | translate }}</td>
                                 <td>{{ race.stats.basicToughness }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.agility' | translate }}</td>
+                                <td>{{ 'display.statistics.agility' | translate }}</td>
                                 <td>{{ race.stats.basicAgility }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.intelligence' | translate }}</td>
+                                <td>{{ 'display.statistics.intelligence' | translate }}</td>
                                 <td>{{ race.stats.basicIntelligence }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.will_power' | translate }}</td>
+                                <td>{{ 'display.statistics.will_power' | translate }}</td>
                                 <td>{{ race.stats.basicWillPower }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.fellowship' | translate }}</td>
+                                <td>{{ 'display.statistics.fellowship' | translate }}</td>
                                 <td>{{ race.stats.basicFellowship }} + {{ 'display.dice' | translate }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.max_wounds' | translate }}</td>
+                                <td>{{ 'display.statistics.max_wounds' | translate }}</td>
                                 <td>{{ race.stats.maxWounds }}</td>
                             </tr>
                             <tr>
-                                <td>{{ 'display.movement_speed' | translate }}</td>
+                                <td>{{ 'display.statistics.movement_speed' | translate }}</td>
                                 <td>{{ race.stats.movement }}</td>
                             </tr>
                             <tr>

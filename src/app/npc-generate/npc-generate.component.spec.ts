@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RaceDisplayComponent } from './race-display.component';
+import { NpcGenerateComponent } from './npc-generate.component';
 
-describe('RaceDisplayComponent', () => {
-	let component: RaceDisplayComponent;
-	let fixture: ComponentFixture<RaceDisplayComponent>;
+describe('NpcGenerateComponent', () => {
+	let component: NpcGenerateComponent;
+	let fixture: ComponentFixture<NpcGenerateComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [RaceDisplayComponent]
+			declarations: [NpcGenerateComponent]
 		})
 			.compileComponents();
 
-		fixture = TestBed.createComponent(RaceDisplayComponent);
+		fixture = TestBed.createComponent(NpcGenerateComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

@@ -1,0 +1,105 @@
+<div class="card server-error" style="width: 20rem" *ngIf="serverErrorFlag">
+    <div class="card-body">
+        <button type="button" class="btn btn-secondary col-1" (click)="onClick()">X</button>
+        <h1 class="card-title">{{ 'display.npc.server_error' | translate }}</h1>
+        <p class="card-text">{{ 'display.npc.message' | translate }}</p>
+    </div>
+</div>
+
+<h3>{{ 'display.npc.title' | translate }}</h3>
+<p>
+    {{ 'display.npc.paragraph1' | translate }}
+</p>
+
+<div class="container text-center mb-3">
+    <form [formGroup]="npcGenerateForm" (ngSubmit)="onSubmit()">
+        <label for="race" class="form-label">{{ 'display.npc.race' | translate }}</label>
+        <select id="race" formControlName="race" name="race" required>
+            <option *ngFor="let raceName of raceNames" [value]="raceName">{{ 'display.race_names.' + raceName | translate }}</option>
+        </select>
+        <label for="gender" class="form-label">{{ 'display.npc.gender' | translate }}</label>
+        <select id="gender" formControlName="gender" name="gender" required>
+            <option value="random" [defaultSelected]>{{ 'display.race_names.random' | translate }}</option>
+            <option value="male">{{ 'display.npc.MALE' | translate }}</option>
+            <option value="female">{{ 'display.npc.FEMALE' | translate }}</option>
+        </select>
+        <button type="submit" class="btn btn-secondary" [disabled]="npcGenerateForm.invalid">{{ 'display.npc.generate' | translate }}</button>
+    </form>
+</div>
+
+<div *ngIf="isNpcGenerated">
+    <div class="card m-2 text-bg-dark">
+        <table class="table table-sm table-bordered table-dark table-responsive">
+            <tbody>
+                <tr>
+                    <td>{{ 'display.npc.name' | translate }}: {{ npc.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered table-dark table-responsive">
+            <tbody>
+                <tr>
+                    <td>{{ 'display.npc.race' | translate }}: {{ 'display.race_names.' + npc.raceName | translate}}</td>
+                    <td>{{ 'display.npc.gender' | translate }}: {{ 'display.npc.' + npc.gender | translate }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'display.npc.hairColor' | translate }}: {{ 'display.colors.' + npc.hairColor | translate }}</td>
+                    <td>{{ 'display.npc.eyeColor' | translate }}: {{ 'display.colors.' + npc.eyeColor | translate }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered table-dark table-responsive">
+            <tbody>
+                <tr>
+                    <td>{{ 'display.npc.height' | translate }}: {{ npc.height }} cm</td>
+                    <td>{{ 'display.npc.weight' | translate }}: {{ npc.weight }} kg</td>
+                    <td>{{ 'display.npc.age' | translate }}: {{ npc.age }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered table-dark table-responsive table-fixed">
+            <tbody>
+                <tr>
+                    <td>{{ 'display.statistics.weapon_skill' | translate }}</td>
+                    <td>{{ 'display.statistics.ballistic_skill' | translate }}</td>
+                    <td>{{ 'display.statistics.strength' | translate }}</td>
+                    <td>{{ 'display.statistics.toughness' | translate }}</td>
+                    <td>{{ 'display.statistics.agility' | translate }}</td>
+                    <td>{{ 'display.statistics.intelligence' | translate }}</td>
+                    <td>{{ 'display.statistics.will_power' | translate }}</td>
+                    <td>{{ 'display.statistics.fellowship' | translate }}</td>
+                </tr>
+                <tr>
+                    <td>{{ npc.weaponSkill }}</td>
+                    <td>{{ npc.ballisticSkill }}</td>
+                    <td>{{ npc.strength }}</td>
+                    <td>{{ npc.toughness }}</td>
+                    <td>{{ npc.agility }}</td>
+                    <td>{{ npc.intelligence }}</td>
+                    <td>{{ npc.willPower }}</td>
+                    <td>{{ npc.fellowship }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'display.statistics.attacks' | translate }}</td>
+                    <td>{{ 'display.statistics.wounds' | translate }}</td>
+                    <td>{{ 'display.statistics.strength_bonus' | translate }}</td>
+                    <td>{{ 'display.statistics.toughness_bonus' | translate }}</td>
+                    <td>{{ 'display.statistics.movement' | translate }}</td>
+                    <td>{{ 'display.statistics.magick' | translate }}</td>
+                    <td>{{ 'display.statistics.insanity_points' | translate }}</td>
+                    <td>{{ 'display.statistics.fate_points' | translate }}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>{{ npc.wounds }}</td>
+                    <td>{{ npc.strengthBonus }}</td>
+                    <td>{{ npc.toughnessBonus }}</td>
+                    <td>{{ npc.movement }}</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
