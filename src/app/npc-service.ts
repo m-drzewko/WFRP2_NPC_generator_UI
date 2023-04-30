@@ -21,6 +21,8 @@ export class NpcService {
 		
 		const url: string = this.getAllRacesUrl + "?race=" + race + "&gender=" + gender;
 
+		//TODO: change the request type to GET
+
 		return this.httpClient.post<SingleResponseObject>(url, headers);
 	}
 }
