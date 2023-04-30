@@ -11,15 +11,8 @@ import { ListResponseObject } from "./response/list-response-object";
 export class RaceService {
 
 	private getAllRacesUrl = 'http://localhost:8080/races';
-	private postRaceUrl = 'http://localhost:8080/races/new';
 
 	constructor(private httpClient: HttpClient, private translate: TranslateService) { }
-
-	//both getRaces() and postRace() now send also a header
-	//to the backend as part of the request;
-	//this will be kept as an example for now,
-	//but will probably only come in handy later
-	//when character generation is in place
 
 	getRaces(): Observable<ListResponseObject> {
 		let headers = new HttpHeaders()
