@@ -1,18 +1,18 @@
 <div class="card container mb-4">
     <div class="card-body">
-        <h4 class="card-title">Login</h4>
+        <h4 class="card-title">{{ 'login.login' | translate }}</h4>
         <div class="card-text">
             <form [formGroup]="loginForm">
                 <p>
-                    <label for="username" class="form-label col-2">Username</label>
+                    <label for="username" class="form-label col-2">{{ 'login.username' | translate }}</label>
                     <input name="username" class="col-2" formControlName="username" type="text" required>
                 </p>
                 <p>
-                    <label for="password" class="form-label col-2">Password</label>
+                    <label for="password" class="form-label col-2">{{ 'login.password' | translate }}</label>
                     <input name="password" class="col-2" formControlName="password" [type]="showPassword ? 'text' : 'password'" required>
-                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">Show password
+                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">{{ 'login.show_password' | translate }}
                 </p>
-                <button type="submit" class="btn btn-secondary" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+                <button type="submit" class="btn btn-secondary" [disabled]="loginForm.invalid" (click)="login()">{{ 'login.login' | translate }}</button>
             </form>
         </div>
     </div>

@@ -1,24 +1,24 @@
 <div class="card container mb-4">
     <div class="card-body">
-        <h4 class="card-title">Registration</h4>
+        <h4 class="card-title">{{ 'registration.registration' | translate }}</h4>
         <div class="card-text">
-            <p>Please fill in the below registration form to register your account.</p>
+            <p>{{ 'registration.registration_text' | translate }}</p>
             <form [formGroup]="registrationForm">
                 <p>
-                    <label for="username" class="form-label col-2">Username</label>
+                    <label for="username" class="form-label col-2">{{ 'registration.username' | translate }}</label>
                     <input name="username" class="col-2" formControlName="username" type="text" required>
                 </p>
                 <p>
-                    <label for="email" class="form-label col-2">Email</label>
+                    <label for="email" class="form-label col-2">{{ 'registration.email' | translate }}</label>
                     <input name="email" class="col-2" formControlName="email" type="text" required>
                 </p>
                 <p>
-                    <label for="password" class="form-label col-2">Password</label>
+                    <label for="password" class="form-label col-2">{{ 'registration.password' | translate }}</label>
                     <input name="password" class="col-2" formControlName="password" [type]="showPassword ? 'text' : 'password'" required>
                     <!-- <label for="toggle" class="col-3">Show password</label> -->
-                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">Show password
+                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">{{ 'registration.show_password' | translate }}
                 </p>
-                <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid" (click)="register()">Register</button>
+                <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid" (click)="register()">{{ 'registration.register' | translate }}</button>
             </form>
         </div>
     </div>
