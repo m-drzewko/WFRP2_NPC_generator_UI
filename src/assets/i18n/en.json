@@ -93,6 +93,21 @@
             "message": "Server is currently unavailable. Please try again later."
         }
     },
+    "registration": {
+        "registration": "Registration",
+        "registration_text": "Please fill in the below registration form to register your account.",
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "show_password": "Show password",
+        "register": "Register"
+    },
+    "login": {
+        "login": "Login",
+        "username": "Username",
+        "password": "Password",
+        "show_password": "Show password"
+    },
     "footer": {
         "version": "version 0.5"
     }
