@@ -10,6 +10,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -19,6 +21,8 @@ import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 		AppComponent,
 		RaceDisplayComponent,
 		NpcGenerateComponent,
+  RegistrationComponent,
+  LoginComponent,
 	],
 	imports: [
 		BrowserModule,
