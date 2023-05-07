@@ -37,9 +37,10 @@ export class RegistrationComponent {
             password: this.registrationForm.get(["password"])?.value
         }
 
-        let headers = new HttpHeaders();
+        let headers = new HttpHeaders()
+            .set('Accept-Language', this.translate.currentLang);
     
-        this.httpClient.post<SingleResponseObject>(this.registrationLink, registrationDto).subscribe((data) => {
+        this.httpClient.post<SingleResponseObject>(this.registrationLink, registrationDto, {headers}).subscribe((data) => {
             console.log('Post sent: ', data);
             this.token = data.object.token;
         }, error => {console.log(error)});

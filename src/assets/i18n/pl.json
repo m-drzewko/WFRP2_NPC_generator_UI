@@ -93,20 +93,15 @@
             "message": "Serwer nie odpowiada. Spróbuj ponownie później."
         }
     },
-    "registration": {
+    "registration_and_login": {
         "registration": "Zarejestruj się",
         "registration_text": "Wypełnij poniższy formularz aby zarejestrować swoje konto.",
         "username": "Nazwa użytkownika",
         "email": "Email",
         "password": "Hasło",
         "show_password": "Pokaż hasło",
-        "register": "Zarejestruj"
-    },
-    "login": {
-        "login": "Login",
-        "username": "Nazwa użytkownika",
-        "password": "Hasło",
-        "show_password": "Pokaż hasło"
+        "register": "Zarejestruj",
+        "login": "Login"
     },
     "footer": {
         "version": "wersja 0.5"

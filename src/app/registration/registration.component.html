@@ -1,24 +1,24 @@
 <div class="card container mb-4">
     <div class="card-body">
-        <h4 class="card-title">{{ 'registration.registration' | translate }}</h4>
+        <h4 class="card-title">{{ 'registration_and_login.registration' | translate }}</h4>
         <div class="card-text">
-            <p>{{ 'registration.registration_text' | translate }}</p>
+            <p>{{ 'registration_and_login.registration_text' | translate }}</p>
             <form [formGroup]="registrationForm">
                 <p>
-                    <label for="username" class="form-label col-2">{{ 'registration.username' | translate }}</label>
+                    <label for="username" class="form-label col-2">{{ 'registration_and_login.username' | translate }}</label>
                     <input name="username" class="col-2" formControlName="username" type="text" required>
                 </p>
                 <p>
-                    <label for="email" class="form-label col-2">{{ 'registration.email' | translate }}</label>
+                    <label for="email" class="form-label col-2">{{ 'registration_and_login.email' | translate }}</label>
                     <input name="email" class="col-2" formControlName="email" type="text" required>
                 </p>
                 <p>
-                    <label for="password" class="form-label col-2">{{ 'registration.password' | translate }}</label>
+                    <label for="password" class="form-label col-2">{{ 'registration_and_login.password' | translate }}</label>
                     <input name="password" class="col-2" formControlName="password" [type]="showPassword ? 'text' : 'password'" required>
                     <!-- <label for="toggle" class="col-3">Show password</label> -->
-                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">{{ 'registration.show_password' | translate }}
+                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">{{ 'registration_and_login.show_password' | translate }}
                 </p>
-                <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid" (click)="register()">{{ 'registration.register' | translate }}</button>
+                <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid" (click)="register()">{{ 'registration_and_login.register' | translate }}</button>
             </form>
         </div>
     </div>
