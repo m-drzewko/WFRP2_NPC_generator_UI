@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { VerifyComponent } from './verify/verify.component';
 
 
 
@@ -23,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 		NpcGenerateComponent,
   RegistrationComponent,
   LoginComponent,
+  VerifyComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -14,7 +14,7 @@ export class RegistrationComponent {
 
     registrationForm: FormGroup;
     showPassword = false;
-    private registrationLink = 'localhost:8080/user/register';
+    private registrationLink = 'http://localhost:8080/user/register';
     token: String = '';
 
     constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private translate: TranslateService) {
@@ -38,9 +38,9 @@ export class RegistrationComponent {
         }
 
         let headers = new HttpHeaders()
-            .set('Accept-Language', this.translate.currentLang);
+            .set('Content-Type', 'application/json');
     
-        this.httpClient.post<SingleResponseObject>(this.registrationLink, registrationDto, {headers}).subscribe((data) => {
+        this.httpClient.post<SingleResponseObject>(this.registrationLink, registrationDto, {"headers": headers}).subscribe((data) => {
             console.log('Post sent: ', data);
             this.token = data.object.token;
         }, error => {console.log(error)});

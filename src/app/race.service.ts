@@ -10,7 +10,7 @@ import { ListResponseObject } from "./response/list-response-object";
 })
 export class RaceService {
 
-	private getAllRacesUrl = 'http://localhost:8080/races';
+	private getAllRacesUrl = 'http://localhost:8080/race/races';
 
 	constructor(private httpClient: HttpClient, private translate: TranslateService) { }
 

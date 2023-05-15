@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LoginComponent {
 
-    loginUrl = 'localhost:8080/auth/login';
+    loginUrl = 'http://localhost:8080/auth/login';
     bearerToken = '';
     loginForm: FormGroup<any>;
     showPassword = false;
