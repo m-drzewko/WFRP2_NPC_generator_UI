@@ -13,6 +13,7 @@ import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { VerifyComponent } from './verify/verify.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -37,7 +38,8 @@ import { VerifyComponent } from './verify/verify.component';
 				useFactory: HttpLoaderFactory,
 				deps: [HttpClient]
 			}
-		})
+		}),
+  BrowserAnimationsModule
 
 	],
 	providers: [],
