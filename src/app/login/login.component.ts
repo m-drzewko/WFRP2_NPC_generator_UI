@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { SingleResponseObject } from '../response/single-response-object';
 
 @Component({
     selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
     loginForm: FormGroup<any>;
     showPassword = false;
 
-    constructor(formBuilder: FormBuilder, httpClient: HttpClient, translate: TranslateService) {
+    constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private translate: TranslateService) {
         this.loginForm = formBuilder.nonNullable.group({
         username: ['', Validators.required],
         password: ['', Validators.required]
@@ -27,7 +28,26 @@ export class LoginComponent {
     }
 
     login() {
-        throw new Error('Method not implemented.');
+        let loginDto = {
+            usernameOrEmail: this.loginForm.get("username")?.value,
+            password: this.loginForm.get("password")?.value
+        };
+
+        let headers = new HttpHeaders()
+            .set('Content-Type', 'application/json');
+
+        
+        this.httpClient.post<any>(this.loginUrl, loginDto, {"headers": headers, observe: "response"}).subscribe((data) => {
+            console.log('Attempting to log in', data);
+            console.log(data.headers.get('Access_Token'));
+            if (data.status === 200) {
+                this.bearerToken = data.headers.get('Access_Token')||'';
+                if (this.bearerToken.length > 0) {
+                    sessionStorage.setItem('Access_Token', this.bearerToken);
+                }
+            }
+            console.log(sessionStorage.getItem('Access_Token'));
+        });
     }
   
 }

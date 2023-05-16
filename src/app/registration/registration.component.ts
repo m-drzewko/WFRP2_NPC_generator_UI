@@ -19,9 +19,9 @@ export class RegistrationComponent {
 
     constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private translate: TranslateService) {
         this.registrationForm = formBuilder.nonNullable.group({
-            username: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', Validators.required]
+            username: ['', [Validators.required, Validators.pattern('[^@]+'), Validators.minLength(6), Validators.maxLength(64)]],
+            email: ['', [Validators.required, Validators.email, Validators.minLength(3)]],
+            password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]]
         })
     }
 
@@ -35,7 +35,7 @@ export class RegistrationComponent {
             username: this.registrationForm.get(["username"])?.value,
             email: this.registrationForm.get(["email"])?.value,
             password: this.registrationForm.get(["password"])?.value
-        }
+        };
 
         let headers = new HttpHeaders()
             .set('Content-Type', 'application/json');
@@ -43,6 +43,7 @@ export class RegistrationComponent {
         this.httpClient.post<SingleResponseObject>(this.registrationLink, registrationDto, {"headers": headers}).subscribe((data) => {
             console.log('Post sent: ', data);
             this.token = data.object.token;
+            console.log(this.token);
         }, error => {console.log(error)});
     }
 }
