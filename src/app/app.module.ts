@@ -23,9 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		AppComponent,
 		RaceDisplayComponent,
 		NpcGenerateComponent,
-  RegistrationComponent,
-  LoginComponent,
-  VerifyComponent,
+  		RegistrationComponent,
+  		LoginComponent,
+  		VerifyComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -39,8 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 				deps: [HttpClient]
 			}
 		}),
-  BrowserAnimationsModule
-
+  		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
