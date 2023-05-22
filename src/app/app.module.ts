@@ -14,6 +14,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { VerifyComponent } from './verify/verify.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeContentComponent } from './home-content/home-content.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 
@@ -26,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   		RegistrationComponent,
   		LoginComponent,
   		VerifyComponent,
+    HomeContentComponent,
+    NavigationComponent,
 	],
 	imports: [
 		BrowserModule,

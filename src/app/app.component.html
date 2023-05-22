@@ -2,11 +2,11 @@
 
 <nav class="navbar navbar-dark bg-dark">
   	<div class="container-fluid">
-    	<ul class="nav me-auto">
-      		<li class="nav-item">
+    	<ul class="nav">
+      		<li class="nav-item me-auto">
         		<a class="nav-link active" aria-current="page" href="#"><img src="assets\images\home_white2.png" alt="{{ 'navigation.home' | translate }}"></a>
       		</li>
-			  <li class="nav-item dropdown">
+			<li class="nav-item dropdown me-auto">
         		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'navigation.generate' | translate }}</a>
         		<ul class="dropdown-menu dropdown-menu-dark">
           			<li>
@@ -14,7 +14,7 @@
           			</li>
         		</ul>
       		</li>
-      		<li class="nav-item dropdown">
+      		<li class="nav-item dropdown me-auto">
         		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'navigation.race' | translate }}</a>
         		<ul class="dropdown-menu dropdown-menu-dark">
           			<li>
@@ -22,12 +22,18 @@
           			</li>
         		</ul>
       		</li>
-      		<li class="nav-item">
+      		<li class="nav-item me-auto">
         		<button type="button" class="nav-link active btn btn-secondary" aria-current="page" (click)="chooseEnglish()"><img src="assets\images\united-kingdom.png" alt="{{ 'navigation.flag_of_uk' | translate }}"></button>
       		</li>
-      		<li class="nav-item">
+      		<li class="nav-item me-auto">
         		<button type="button" class="nav-link active btn btn-secondary" aria-current="page" (click)="choosePolish()"><img src="assets\images\poland.png" alt="{{ 'navigation.flag_of_pl' | translate }}"></button>
       		</li>
+			<li class="nav-item me-auto">
+				<button type="button" class="nav-link active btn btn-secondary" aria-current="page" routerLink="registration">{{ 'registration_and_login.register' | translate }}</button>
+			</li>
+			<li class="nav-item me-auto">
+				<button type="button" class="nav-link active btn btn-secondary" aria-current="page" routerLink="login">{{ 'registration_and_login.login' | translate }}</button>
+			</li>
     	</ul>
   	</div>
 </nav>
@@ -63,9 +69,6 @@
 	<div class="d-flex-inline p-5">
 		<router-outlet></router-outlet>
 	</div>
-
-	<app-registration></app-registration>
-	<app-login></app-login>
 
 	<!-- Footer -->
 	<footer class="text-center fw-light text-muted bg-light align-text-bottom">
