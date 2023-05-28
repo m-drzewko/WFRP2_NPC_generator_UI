@@ -5,6 +5,7 @@ import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 import { VerifyComponent } from './verify/verify.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { HomeContentComponent } from './home-content/home-content.component';
 
 const routes: Routes = [
 	{
@@ -26,6 +27,10 @@ const routes: Routes = [
 	{
 		path: "verify",
 		component: VerifyComponent
+	},
+	{
+		path:"",
+		component: HomeContentComponent
 	}
 ];
 

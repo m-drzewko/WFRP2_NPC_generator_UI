@@ -14,11 +14,15 @@ export class AppComponent {
 		translate.use('en');
 	}
 
-	chooseEnglish() {
-		this.translate.use('en');
+	languageToggle(language: string) {
+		this.translate.use(language);
 	}
 
-	choosePolish() {
-		this.translate.use('pl');
-	}
+	// chooseEnglish() {
+	// 	this.translate.use('en');
+	// }
+
+	// choosePolish() {
+	// 	this.translate.use('pl');
+	// }
 }
