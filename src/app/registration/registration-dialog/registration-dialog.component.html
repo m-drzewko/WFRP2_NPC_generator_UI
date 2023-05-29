@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Thank you for registering!</h2>
+<div mat-dialog-content>
+    <p>Please paste this link in your browser's address bar to verify your account. Please note, you will not be able to log in without verification!</p>
+    <p>Link: {{ data.token }}</p>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-secondary" (click)="onClick()">Dismiss</button>
+</div>

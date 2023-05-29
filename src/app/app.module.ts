@@ -16,6 +16,8 @@ import { VerifyComponent } from './verify/verify.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { RegistrationDialogComponent } from './registration/registration-dialog/registration-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -28,8 +30,9 @@ import { NavigationComponent } from './navigation/navigation.component';
   		RegistrationComponent,
   		LoginComponent,
   		VerifyComponent,
-    HomeContentComponent,
-    NavigationComponent,
+    	HomeContentComponent,
+    	NavigationComponent,
+    	RegistrationDialogComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -43,7 +46,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 				deps: [HttpClient]
 			}
 		}),
-  		BrowserAnimationsModule
+  		BrowserAnimationsModule,
+		MatDialogModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
