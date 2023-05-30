@@ -2,12 +2,11 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable } from "rxjs";
-import { SingleResponseObject } from "./response/single-response-object";
+import { SingleResponseObject } from "../response/single-response-object";
 
 @Injectable({
 	providedIn: 'root'
 })
-
 export class NpcService {
 
 	private getAllRacesUrl = 'http://localhost:8080/npc/generate';

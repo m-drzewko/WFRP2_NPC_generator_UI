@@ -1,5 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { HOST } from '../../shared/utils';
 
 @Component({
   selector: 'app-registration-dialog',
@@ -7,6 +8,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./registration-dialog.component.css']
 })
 export class RegistrationDialogComponent implements OnInit {
+
+  protected hostUrlString = HOST;
   
   constructor(public dialogRef: MatDialogRef<RegistrationDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: {token: string}) { }
   

@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable, tap } from "rxjs";
-import { ListResponseObject } from "./response/list-response-object";
+import { ListResponseObject } from "../response/list-response-object";
 
 
 @Injectable({

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NpcService } from '../npc-service';
-import { RaceService } from '../race.service';
-import { Race } from '../race';
-import { Npc } from '../npc';
+import { NpcService } from '../services/npc-service';
+import { RaceService } from '../services/race.service';
+import { Race } from '../model/race';
+import { Npc } from '../model/npc';
 import { SingleResponseObject } from '../response/single-response-object';
 import { HttpErrorResponse } from '@angular/common/http';
 

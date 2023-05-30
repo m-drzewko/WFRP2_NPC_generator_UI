@@ -35,7 +35,7 @@ export class RegistrationComponent {
 
     doRegistration() {
         this.register();
-        setTimeout(() => {this.openDialog()}, 200);
+        // setTimeout(() => {this.openDialog()}, 250);
     }
 
     register() {
@@ -53,6 +53,7 @@ export class RegistrationComponent {
             console.log('Post sent: ', data);
             this.token = data.object.token;
             console.log(this.token);
+            this.openDialog()
         }, error => {console.log(error)});
     }
 
