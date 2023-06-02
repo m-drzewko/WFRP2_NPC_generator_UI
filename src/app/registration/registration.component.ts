@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SingleResponseObject } from '../shared/response/single-response-object';
 import { MatDialog } from '@angular/material/dialog';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -20,7 +21,8 @@ export class RegistrationComponent {
 
     constructor(private formBuilder: FormBuilder,
         private httpClient: HttpClient,
-        public dialog: MatDialog) {
+        public dialog: MatDialog,
+        private authService: AuthService) {
         this.registrationForm = formBuilder.nonNullable.group({
             username: ['', [Validators.required, Validators.pattern('[^@]+'), Validators.minLength(6), Validators.maxLength(64)]],
             email: ['', [Validators.required, Validators.email, Validators.minLength(3)]],
@@ -32,7 +34,7 @@ export class RegistrationComponent {
         this.showPassword = !this.showPassword;
     }
 
-    doRegistration() {
+    attemptRegistration() {
         this.register();
         // setTimeout(() => {this.openDialog()}, 250);
     }
@@ -45,15 +47,8 @@ export class RegistrationComponent {
             password: this.registrationForm.get(["password"])?.value
         };
 
-        let headers = new HttpHeaders()
-            .set('Content-Type', 'application/json');
-    
-        this.httpClient.post<SingleResponseObject>(this.registrationLink, registrationDto, {"headers": headers}).subscribe((data) => {
-            console.log('Post sent: ', data);
-            this.token = data.object.token;
-            console.log(this.token);
-            this.openDialog()
-        }, error => {console.log(error)});
+        this.token = this.authService.register(registrationDto);
+
     }
 
     openDialog() {

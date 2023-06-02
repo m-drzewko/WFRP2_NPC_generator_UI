@@ -18,7 +18,7 @@
                     <!-- <label for="toggle" class="col-3">Show password</label> -->
                     <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">{{ 'registration_and_login.show_password' | translate }}
                 </p>
-                <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid" (click)="doRegistration()">{{ 'registration_and_login.register' | translate }}</button>
+                <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid" (click)="attemptRegistration()">{{ 'registration_and_login.register' | translate }}</button>
             </form>
         </div>
     </div>

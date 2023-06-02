@@ -1,50 +1,45 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginDto } from '../shared/model/login-dto';
+import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    styleUrls: ['./login.component.css'],
+    providers: [AuthService]
 })
-export class LoginComponent {
+export class LoginComponent implements OnChanges {
 
     loginUrl = 'http://localhost:8080/auth/login';
-    bearerToken = '';
     loginForm: FormGroup<any>;
     showPassword = false;
+    isUserLoggedIn = false;
 
-    constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
+    constructor(private formBuilder: FormBuilder,
+        private httpClient: HttpClient,
+        private authService: AuthService) {
         this.loginForm = formBuilder.nonNullable.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required]
+            username: ['', Validators.required],
+            password: ['', Validators.required]
     })
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.isUserLoggedIn = this.authService.isUserLoggedIn();
     }
 
     toggleShowPassword() {
         this.showPassword = !this.showPassword;
     }
 
-    login() {
-        let loginDto = {
+    attemptLogin() {
+        let loginDto: LoginDto = {
             usernameOrEmail: this.loginForm.get("username")?.value,
             password: this.loginForm.get("password")?.value
         };
 
-        let headers = new HttpHeaders()
-            .set('Content-Type', 'application/json');
-
-        
-        this.httpClient.post<any>(this.loginUrl, loginDto, {"headers": headers, observe: "response"}).subscribe((data) => {
-            console.log('Attempting to log in', data);
-            console.log(data.headers.get('Access_Token'));
-            if (data.status === 200) {
-                this.bearerToken = data.headers.get('Access_Token')||'';
-                if (this.bearerToken.length > 0) {
-                    sessionStorage.setItem('Access_Token', this.bearerToken);
-                }
-            }
-            console.log(sessionStorage.getItem('Access_Token'));
-        });
+        this.authService.logIn(loginDto);
     }
 }
