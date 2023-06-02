@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { SingleResponseObject } from '../response/single-response-object';
+import { SingleResponseObject } from '../shared/response/single-response-object';
 import { MatDialog } from '@angular/material/dialog';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 
@@ -20,7 +20,6 @@ export class RegistrationComponent {
 
     constructor(private formBuilder: FormBuilder,
         private httpClient: HttpClient,
-        private translate: TranslateService,
         public dialog: MatDialog) {
         this.registrationForm = formBuilder.nonNullable.group({
             username: ['', [Validators.required, Validators.pattern('[^@]+'), Validators.minLength(6), Validators.maxLength(64)]],

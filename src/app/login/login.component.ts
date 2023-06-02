@@ -1,8 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
-import { SingleResponseObject } from '../response/single-response-object';
 
 @Component({
     selector: 'app-login',
@@ -16,7 +14,7 @@ export class LoginComponent {
     loginForm: FormGroup<any>;
     showPassword = false;
 
-    constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private translate: TranslateService) {
+    constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
         this.loginForm = formBuilder.nonNullable.group({
         username: ['', Validators.required],
         password: ['', Validators.required]
@@ -49,5 +47,4 @@ export class LoginComponent {
             console.log(sessionStorage.getItem('Access_Token'));
         });
     }
-  
 }

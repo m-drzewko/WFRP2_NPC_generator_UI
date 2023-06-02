@@ -2,14 +2,15 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable } from "rxjs";
-import { SingleResponseObject } from "../response/single-response-object";
+import { SingleResponseObject } from "../shared/response/single-response-object";
+import { HOST } from "../shared/utils";
 
 @Injectable({
 	providedIn: 'root'
 })
 export class NpcService {
 
-	private getAllRacesUrl = 'http://localhost:8080/npc/generate';
+	private getAllRacesUrl = HOST + 'npc/generate';
 
 	constructor(private httpClient: HttpClient, private translate: TranslateService) { }
 

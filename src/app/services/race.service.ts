@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable, tap } from "rxjs";
-import { ListResponseObject } from "../response/list-response-object";
+import { ListResponseObject } from "../shared/response/list-response-object";
+import { HOST } from "../shared/utils";
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { ListResponseObject } from "../response/list-response-object";
 })
 export class RaceService {
 
-	private getAllRacesUrl = 'http://localhost:8080/race/races';
+	private getAllRacesUrl = HOST + 'race/races';
 
 	constructor(private httpClient: HttpClient, private translate: TranslateService) { }
 

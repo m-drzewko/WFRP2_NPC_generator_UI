@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ENGLISH, POLISH } from '../shared/utils';
 
 @Component({
   selector: 'app-navigation',
@@ -10,11 +11,11 @@ export class NavigationComponent {
   @Output() languageSelected = new EventEmitter<string>();
 
   clickEnglish() {
-    this.languageSelected.emit('en');
+    this.languageSelected.emit(ENGLISH);
   }
 
   clickPolish() {
-    this.languageSelected.emit('pl');
+    this.languageSelected.emit(POLISH);
   }
 
 }

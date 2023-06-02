@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NpcService } from '../services/npc-service';
 import { RaceService } from '../services/race.service';
-import { Race } from '../model/race';
-import { Npc } from '../model/npc';
-import { SingleResponseObject } from '../response/single-response-object';
+import { Race } from '../shared/model/race';
+import { Npc } from '../shared/model/npc';
+import { SingleResponseObject } from '../shared/response/single-response-object';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
 	selector: 'app-npc-generate',
 	templateUrl: './npc-generate.component.html',
-	styleUrls: ['./npc-generate.component.css']
+	styleUrls: ['./npc-generate.component.css'],
+	providers: [NpcService, RaceService]
 })
 export class NpcGenerateComponent implements OnInit {
 

@@ -4,7 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+	styleUrls: ['./app.component.css'],
+	providers: [TranslateService]
 })
 export class AppComponent {
 	title = 'wfrp_npc_generator';
@@ -17,12 +18,4 @@ export class AppComponent {
 	languageToggle(language: string) {
 		this.translate.use(language);
 	}
-
-	// chooseEnglish() {
-	// 	this.translate.use('en');
-	// }
-
-	// choosePolish() {
-	// 	this.translate.use('pl');
-	// }
 }

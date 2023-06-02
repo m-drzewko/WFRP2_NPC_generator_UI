@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Race } from '../model/race';
+import { Race } from '../shared/model/race';
 import { RaceService } from '../services/race.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
 	selector: 'app-race-display',
 	templateUrl: './race-display.component.html',
-	styleUrls: ['./race-display.component.css']
+	styleUrls: ['./race-display.component.css'],
+	providers: [RaceService]
 })
 export class RaceDisplayComponent implements OnInit {
 
