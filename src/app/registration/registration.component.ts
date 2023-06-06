@@ -16,7 +16,6 @@ export class RegistrationComponent {
 
     registrationForm: FormGroup;
     showPassword = false;
-    private registrationLink = 'http://localhost:8080/user/register';
     token: String = '';
 
     constructor(private formBuilder: FormBuilder,
@@ -36,7 +35,7 @@ export class RegistrationComponent {
 
     attemptRegistration() {
         this.register();
-        // setTimeout(() => {this.openDialog()}, 250);
+        setTimeout(() => {this.openDialog()}, 250);
     }
 
     register() {

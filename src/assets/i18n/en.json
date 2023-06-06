@@ -101,7 +101,9 @@
         "password": "Password",
         "show_password": "Show password",
         "register": "Register",
-        "login": "Login"
+        "login": "Log in",
+        "logout": "Log out",
+        "account": "Account"
     },
     "footer": {
         "version": "version 0.5"

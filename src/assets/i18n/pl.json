@@ -101,7 +101,9 @@
         "password": "Hasło",
         "show_password": "Pokaż hasło",
         "register": "Zarejestruj",
-        "login": "Login"
+        "login": "Zaloguj",
+        "logout": "Wyloguj",
+        "account": "Konto"
     },
     "footer": {
         "version": "wersja 0.5"

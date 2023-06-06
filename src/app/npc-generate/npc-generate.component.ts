@@ -10,8 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
 	selector: 'app-npc-generate',
 	templateUrl: './npc-generate.component.html',
-	styleUrls: ['./npc-generate.component.css'],
-	providers: [NpcService, RaceService]
+	styleUrls: ['./npc-generate.component.css']
 })
 export class NpcGenerateComponent implements OnInit {
 

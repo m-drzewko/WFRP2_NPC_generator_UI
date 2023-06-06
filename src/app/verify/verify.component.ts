@@ -13,7 +13,6 @@ export class VerifyComponent implements OnInit {
         private authenticationService: AuthService) { }
   
     ngOnInit(): void {
-        // TODO: implement token verification
         let token = this.activatedRoute.snapshot.queryParams["token"];
         this.authenticationService.verifyUser(token).subscribe(
             (data) => {

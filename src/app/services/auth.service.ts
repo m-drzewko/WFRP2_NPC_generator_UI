@@ -48,7 +48,6 @@ export class AuthService {
     isUserLoggedIn(): boolean {
         let bearerToken = sessionStorage.getItem('Access_Token') || '';
         if (bearerToken.length > 0) {
-            console.log('BEARER ' + bearerToken);
             return true;
         } else {
             return false;

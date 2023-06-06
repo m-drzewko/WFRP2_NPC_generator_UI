@@ -22,8 +22,8 @@ export class RaceService {
 		return this.httpClient.get<ListResponseObject>(this.getAllRacesUrl, {
 			headers: headers
 		})
-			.pipe(
-				tap(data => console.log(data))
-			);
+		.pipe(
+			tap(data => console.log(data))
+		);
 	}
 }

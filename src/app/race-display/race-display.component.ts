@@ -6,8 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
 	selector: 'app-race-display',
 	templateUrl: './race-display.component.html',
-	styleUrls: ['./race-display.component.css'],
-	providers: [RaceService]
+	styleUrls: ['./race-display.component.css']
 })
 export class RaceDisplayComponent implements OnInit {
 
