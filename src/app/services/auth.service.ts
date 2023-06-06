@@ -15,6 +15,7 @@ export class AuthService {
     private registrationUrl = HOST + 'user/register';
     private loginUrl = HOST + 'auth/login';
     private headers = new HttpHeaders().set('Content-Type', 'application/json');
+    public isLoggedIn = false;
 
     constructor(private httpClient: HttpClient) { }
 
@@ -35,6 +36,7 @@ export class AuthService {
                 bearerToken = data.headers.get('Access_Token')||'';
                 if (bearerToken.length > 0) {
                     sessionStorage.setItem('Access_Token', bearerToken);
+                    this.isLoggedIn = true;
                 }
             }
             console.log('BEARER ' + sessionStorage.getItem('Access_Token'));
@@ -43,6 +45,7 @@ export class AuthService {
 
     logOut(): void {
         sessionStorage.removeItem('Access_Token');
+        this.isLoggedIn = false;
     }
 
     isUserLoggedIn(): boolean {

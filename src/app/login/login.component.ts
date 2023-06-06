@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnChanges {
+export class LoginComponent {
 
     loginUrl = 'http://localhost:8080/auth/login';
     loginForm: FormGroup<any>;
@@ -23,10 +23,6 @@ export class LoginComponent implements OnChanges {
             username: ['', Validators.required],
             password: ['', Validators.required]
     })
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        this.isUserLoggedIn = this.authService.isUserLoggedIn();
     }
 
     toggleShowPassword() {
