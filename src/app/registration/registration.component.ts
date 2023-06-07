@@ -34,23 +34,18 @@ export class RegistrationComponent {
     }
 
     attemptRegistration() {
-        this.register();
-        setTimeout(() => {this.openDialog()}, 250);
-    }
-
-    register() {
         console.log(this.registrationForm.value);
+        
         let registrationDto = {
             username: this.registrationForm.get(["username"])?.value,
             email: this.registrationForm.get(["email"])?.value,
             password: this.registrationForm.get(["password"])?.value
         };
 
-        this.token = this.authService.register(registrationDto);
-
+        this.token = this.authService.register(registrationDto, this.dialog);
     }
 
-    openDialog() {
-        const dialogRef = this.dialog.open(RegistrationDialogComponent, {data: {token: this.token}});
-    }
+    // openDialog() {
+    //     const dialogRef = this.dialog.open(RegistrationDialogComponent, {data: {token: this.token}});
+    // }
 }

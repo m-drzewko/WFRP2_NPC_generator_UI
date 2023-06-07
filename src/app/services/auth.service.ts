@@ -5,6 +5,8 @@ import { SingleResponseObject } from '../shared/response/single-response-object'
 import { Observable } from 'rxjs';
 import { LoginDto } from '../shared/model/login-dto';
 import { RegistrationDto } from '../shared/model/registration-dto';
+import { MatDialog } from '@angular/material/dialog';
+import { RegistrationDialogComponent } from '../registration/registration-dialog/registration-dialog.component';
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +17,7 @@ export class AuthService {
     private registrationUrl = HOST + 'user/register';
     private loginUrl = HOST + 'auth/login';
     private headers = new HttpHeaders().set('Content-Type', 'application/json');
+    
     public isLoggedIn = false;
 
     constructor(private httpClient: HttpClient) { }
@@ -57,19 +60,19 @@ export class AuthService {
         }
     }
 
-    register(registrationDto: RegistrationDto): string {
+    register(registrationDto: RegistrationDto, dialog: MatDialog): string {
         let returnString = '';
 
-        this.httpClient.post<SingleResponseObject>(this.registrationUrl, registrationDto, {"headers": this.headers}).subscribe((data) => {
+        this.httpClient.post<SingleResponseObject>(this.registrationUrl, registrationDto, {"headers": this.headers}).subscribe(
+            (data) => {
             console.log('Post sent: ', data);
             let token = data.object.token;
             console.log(token);
             returnString = token;
+            dialog.open(RegistrationDialogComponent, {data: {token: token}})
         }, error => {
             console.log(error);
-            //TODO implement passing error messages to registration component
-            //to show in the dialog
-            ///????
+            //TODO create errorMessageDialog to display errors during registration
             returnString = error.message;
         });
         return returnString;

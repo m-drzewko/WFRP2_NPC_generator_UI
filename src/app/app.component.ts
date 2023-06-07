@@ -12,6 +12,9 @@ export class AppComponent {
 
 	constructor(private translate: TranslateService) {
 		translate.setDefaultLang('en');
+		//TODO save chosen language in a cookie and read from there
+		//so that after reloading the language doesn't change back
+		//to English
 		translate.use('en');
 	}
 

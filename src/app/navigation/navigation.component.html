@@ -26,15 +26,15 @@
             <li class="nav-item">
                 <button type="button" class="nav-link active btn btn-secondary" (click)="clickPolish()"><img src="assets\images\poland.png" alt="{{ 'navigation.flag_of_pl' | translate }}"></button>
             </li>
-            <li class="nav-item" *ngIf="!this.authService.isUserLoggedIn()">
+            <li class="nav-item" *ngIf="!this.authService.isLoggedIn">
                 <button type="button" class="nav-link active btn btn-secondary" routerLink="registration">{{ 'registration_and_login.register' | translate }}</button>
             </li>
-            <li class="nav-item" *ngIf="this.authService.isUserLoggedIn()">
+            <li class="nav-item" *ngIf="this.authService.isLoggedIn">
                 <button disabled type="button" class="nav-link btn btn-secondary"> {{ 'registration_and_login.account' | translate }}</button>
             </li>
             <li class="nav-item">
-                <button type="button" *ngIf="!this.authService.isUserLoggedIn()" class="nav-link active btn btn-secondary" routerLink="login">{{ 'registration_and_login.login' | translate }}</button>
-                <button type="button" *ngIf="this.authService.isUserLoggedIn()" class="nav-link active btn btn-secondary" (click)="doLogout()">{{ 'registration_and_login.logout' | translate }}</button>
+                <button type="button" *ngIf="!this.authService.isLoggedIn" class="nav-link active btn btn-secondary" routerLink="login">{{ 'registration_and_login.login' | translate }}</button>
+                <button type="button" *ngIf="this.authService.isLoggedIn" class="nav-link active btn btn-secondary" (click)="doLogout()">{{ 'registration_and_login.logout' | translate }}</button>
             </li>
         </ul>
     </div>
