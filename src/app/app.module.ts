@@ -18,6 +18,7 @@ import { HomeContentComponent } from './home-content/home-content.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RegistrationDialogComponent } from './registration/registration-dialog/registration-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
 
 
 
@@ -33,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     	HomeContentComponent,
     	NavigationComponent,
     	RegistrationDialogComponent,
+     	ErrorDialogComponent,
 	],
 	imports: [
 		BrowserModule,

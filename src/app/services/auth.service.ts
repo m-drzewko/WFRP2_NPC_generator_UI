@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HOST } from '../shared/utils';
-import { SingleResponseObject } from '../shared/response/single-response-object';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+import { RegistrationDialogComponent } from '../registration/registration-dialog/registration-dialog.component';
 import { LoginDto } from '../shared/model/login-dto';
 import { RegistrationDto } from '../shared/model/registration-dto';
-import { MatDialog } from '@angular/material/dialog';
-import { RegistrationDialogComponent } from '../registration/registration-dialog/registration-dialog.component';
+import { SingleResponseObject } from '../shared/response/single-response-object';
+import { HOST } from '../shared/utils';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +22,7 @@ export class AuthService {
     
     public isLoggedIn = false;
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient, private translate: TranslateService, private router: Router) { }
 
     verifyUser(token: string): Observable<SingleResponseObject> {
 
@@ -40,6 +42,7 @@ export class AuthService {
                 if (bearerToken.length > 0) {
                     sessionStorage.setItem('Access_Token', bearerToken);
                     this.isLoggedIn = true;
+                    this.router.navigate([""]);
                 }
             }
             console.log('BEARER ' + sessionStorage.getItem('Access_Token'));
@@ -49,21 +52,30 @@ export class AuthService {
     logOut(): void {
         sessionStorage.removeItem('Access_Token');
         this.isLoggedIn = false;
+        this.router.navigate([""]);
     }
+
+    //TODO implement check if JWT is expired
 
     isUserLoggedIn(): boolean {
         let bearerToken = sessionStorage.getItem('Access_Token') || '';
+
         if (bearerToken.length > 0) {
-            return true;
+            return this.isLoggedIn = true;
         } else {
-            return false;
+            return this.isLoggedIn = false;
         }
     }
 
     register(registrationDto: RegistrationDto, dialog: MatDialog): string {
         let returnString = '';
 
-        this.httpClient.post<SingleResponseObject>(this.registrationUrl, registrationDto, {"headers": this.headers}).subscribe(
+        let headers = this.headers;
+
+        headers = headers.set('Accept-Language', this.translate.currentLang);
+
+
+        this.httpClient.post<SingleResponseObject>(this.registrationUrl, registrationDto, {"headers": headers}).subscribe(
             (data) => {
             console.log('Post sent: ', data);
             let token = data.object.token;

@@ -103,7 +103,17 @@
         "register": "Zarejestruj",
         "login": "Zaloguj",
         "logout": "Wyloguj",
-        "account": "Konto"
+        "account": "Account",
+        "dialog": {
+            "thank_you": "Dziękuję za zarejestrowanie!",
+            "main_body": "Na twoją skrzynkę mailową wysłana została wiadomość weryfikacyjna. Kliknij w link zawarty w wiadomości aby zweryfikować swoje konto. Po zweryfikowaniu będziesz mógł się zalogować.",
+            "dismiss_button":"Zamknij"
+        }
+    },
+    "shared": {
+        "error_dialog": {
+            
+        }
     },
     "footer": {
         "version": "wersja 0.5"

@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
 	title = 'wfrp_npc_generator';
 
-	constructor(private translate: TranslateService) {
+	constructor(public translate: TranslateService) {
 		translate.setDefaultLang('en');
 		//TODO save chosen language in a cookie and read from there
 		//so that after reloading the language doesn't change back

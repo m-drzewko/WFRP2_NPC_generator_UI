@@ -1,10 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
-import { SingleResponseObject } from '../shared/response/single-response-object';
 import { MatDialog } from '@angular/material/dialog';
-import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -44,8 +41,4 @@ export class RegistrationComponent {
 
         this.token = this.authService.register(registrationDto, this.dialog);
     }
-
-    // openDialog() {
-    //     const dialogRef = this.dialog.open(RegistrationDialogComponent, {data: {token: this.token}});
-    // }
 }

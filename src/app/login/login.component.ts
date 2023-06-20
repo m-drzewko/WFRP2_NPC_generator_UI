@@ -1,8 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginDto } from '../shared/model/login-dto';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { LoginDto } from '../shared/model/login-dto';
+import { HOST } from '../shared/utils';
 
 @Component({
     selector: 'app-login',
@@ -11,14 +13,17 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent {
 
-    loginUrl = 'http://localhost:8080/auth/login';
+    loginUrl = HOST + 'auth/login';
     loginForm: FormGroup<any>;
     showPassword = false;
-    isUserLoggedIn = false;
 
     constructor(private formBuilder: FormBuilder,
         private httpClient: HttpClient,
-        private authService: AuthService) {
+        private authService: AuthService,
+        private router: Router) {
+        if(authService.isLoggedIn) {
+            this.router.navigate([""]);
+        }
         this.loginForm = formBuilder.nonNullable.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
