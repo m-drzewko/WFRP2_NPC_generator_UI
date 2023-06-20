@@ -112,7 +112,21 @@
     },
     "shared": {
         "error_dialog": {
-            
+            "header": "Coś poszło nie tak!",
+            "main_body": "Kod błędu:",
+            "dismiss_button": "Zamknij",
+            "messages": {
+                "SOMETHING_WENT_WRONG":"Błąd nieznany",
+                "NO_SUCH_USER":"Użytkownik nie istnieje",
+                "USER_NOT_VERIFIED":"Użytkownik niezweryfikowany",
+                "USER_ALREADY_EXISTS":"Użytkownik już istnieje",
+                "USER_ALREADY_CONFIRMED":"Użytkownik już zweryfikowany",
+                "NO_SUCH_TOKEN":"Token nie istnieje",
+                "TOKEN_EXPIRED":"Token wygasł",
+                "TOKEN_USED":"Token wykorzystany",
+                "TOKEN_TYPE_INVALID":"Niezgodny rodzaj tokenu",
+                "INCORRECT_PASSWORD":"Hasło niepoprawne"
+            }
         }
     },
     "footer": {

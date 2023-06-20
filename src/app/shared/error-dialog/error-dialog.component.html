@@ -1,8 +1,8 @@
-<h2 mat-dialog-title>Something went wrong!</h2>
+<h2 mat-dialog-title>{{ 'shared.error_dialog.header' | translate }}</h2>
 <div mat-dialog-content>
-    <p>Please paste this link in your browser's address bar to verify your account. Please note, you will not be able to log in without verification!</p>
-    <p>Link: </p>
+    <p>{{ 'shared.error_dialog.main_body' | translate }}</p>
+    <p>{{ 'shared.error_dialog.messages.' + data.errorMessage | translate }}</p>
 </div>
 <div mat-dialog-actions>
-    <button class="btn btn-secondary" (click)="onClick()">Dismiss</button>
+    <button class="btn btn-secondary" (click)="onClick()">{{ 'shared.error_dialog.dismiss_button' | translate }}</button>
 </div>

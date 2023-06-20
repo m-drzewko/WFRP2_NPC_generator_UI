@@ -9,13 +9,14 @@ import { SELF } from '../../shared/utils';
 })
 export class RegistrationDialogComponent implements OnInit {
 
-  protected urlString = SELF;
+  // protected urlString = SELF;
 
   constructor(public dialogRef: MatDialogRef<RegistrationDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { token: string }) { }
+    // @Inject(MAT_DIALOG_DATA) public data: { token: string }
+    ) { }
 
   ngOnInit(): void {
-    console.log(this.data);
+    // console.log(this.data);
   }
 
   onClick(): void {

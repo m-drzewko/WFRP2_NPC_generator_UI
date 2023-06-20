@@ -9,6 +9,7 @@ import { LoginDto } from '../shared/model/login-dto';
 import { RegistrationDto } from '../shared/model/registration-dto';
 import { SingleResponseObject } from '../shared/response/single-response-object';
 import { HOST } from '../shared/utils';
+import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.component';
 
 @Injectable({
     providedIn: 'root'
@@ -84,7 +85,7 @@ export class AuthService {
             dialog.open(RegistrationDialogComponent, {data: {token: token}})
         }, error => {
             console.log(error);
-            //TODO create errorMessageDialog to display errors during registration
+            dialog.open(ErrorDialogComponent, {data: {errorMessage: error.error.message}});
             returnString = error.message;
         });
         return returnString;

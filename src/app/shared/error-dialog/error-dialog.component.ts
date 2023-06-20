@@ -10,7 +10,7 @@ import { RegistrationDialogComponent } from 'src/app/registration/registration-d
 export class ErrorDialogComponent {
 
   constructor(public dialogRef: MatDialogRef<RegistrationDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { token: string }) { }
+    @Inject(MAT_DIALOG_DATA) public data: { errorMessage: string }) { }
 
   ngOnInit(): void {
     console.log(this.data);
@@ -19,5 +19,4 @@ export class ErrorDialogComponent {
   onClick(): void {
     this.dialogRef.close();
   }
-
 }
