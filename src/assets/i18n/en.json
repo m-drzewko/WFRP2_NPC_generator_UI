@@ -114,18 +114,19 @@
         "error_dialog": {
             "header": "Something went wrong!",
             "main_body": "Error occurred:",
-            "dismiss_button":"Dismiss",
+            "dismiss_button": "Dismiss",
             "messages": {
-                "SOMETHING_WENT_WRONG":"Unknown error",
-                "NO_SUCH_USER":"No such user exists!",
-                "USER_NOT_VERIFIED":"User not verified!",
-                "USER_ALREADY_EXISTS":"User already exists!",
-                "USER_ALREADY_CONFIRMED":"User already confirmed!",
-                "NO_SUCH_TOKEN":"Token does not exist!",
-                "TOKEN_EXPIRED":"Token expired!",
-                "TOKEN_USED":"Token already used!",
-                "TOKEN_TYPE_INVALID":"Invalid token type!",
-                "INCORRECT_PASSWORD":"Incorrect password!"
+                "SOMETHING_WENT_WRONG": "Unknown error",
+                "NO_SUCH_USER": "No such user exists!",
+                "USER_NOT_VERIFIED": "User not verified!",
+                "USER_ALREADY_EXISTS": "User already exists!",
+                "USER_ALREADY_CONFIRMED": "User already confirmed!",
+                "NO_SUCH_TOKEN": "Token does not exist!",
+                "TOKEN_EXPIRED": "Token expired!",
+                "TOKEN_USED": "Token already used!",
+                "TOKEN_TYPE_INVALID": "Invalid token type!",
+                "INCORRECT_PASSWORD": "Incorrect password!",
+                "SERVER_DOWN": "Server unavailable, please try again later."
             }
         }
     },

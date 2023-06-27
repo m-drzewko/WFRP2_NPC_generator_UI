@@ -5,3 +5,4 @@ export const SELF = 'http://localhost:4200/';
 export const ENGLISH = 'en';
 export const POLISH = 'pl';
 export const JWTHELPER = new JwtHelperService();
+export const SERVER_DOWN = 'SERVER_DOWN';
