@@ -12,13 +12,18 @@ export class AppComponent {
 
 	constructor(public translate: TranslateService) {
 		translate.setDefaultLang('en');
-		//TODO save chosen language in a cookie and read from there
-		//so that after reloading the language doesn't change back
-		//to English
-		translate.use('en');
+		let currentLang = localStorage.getItem('currentLang');
+		if (!currentLang?.match('en') && !currentLang?.match('pl')) {
+			translate.use('en');
+		} else if (currentLang === 'en') {
+			translate.use('en');
+		} else {
+			translate.use('pl');
+		}
 	}
 
 	languageToggle(language: string) {
+		localStorage.setItem('currentLang', language);
 		this.translate.use(language);
 	}
 }

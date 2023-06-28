@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { LoginDto } from '../shared/model/login-dto';
 import { HOST } from '../shared/utils';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent {
     constructor(private formBuilder: FormBuilder,
         private httpClient: HttpClient,
         private authService: AuthService,
-        private router: Router) {
+        private router: Router,
+        public dialog: MatDialog) {
         if(authService.isLoggedIn) {
             this.router.navigate([""]);
         }
@@ -40,6 +42,6 @@ export class LoginComponent {
             password: this.loginForm.get("password")?.value
         };
 
-        this.authService.logIn(loginDto);
+        this.authService.logIn(loginDto, this.dialog);
     }
 }

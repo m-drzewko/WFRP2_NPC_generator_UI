@@ -8,7 +8,7 @@ import { RegistrationDialogComponent } from '../registration/registration-dialog
 import { LoginDto } from '../shared/model/login-dto';
 import { RegistrationDto } from '../shared/model/registration-dto';
 import { SingleResponseObject } from '../shared/response/single-response-object';
-import { HOST, SERVER_DOWN } from '../shared/utils';
+import { HOST, INCORRECT_CREDENTIALS, SERVER_DOWN } from '../shared/utils';
 import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.component';
 
 @Injectable({
@@ -33,7 +33,7 @@ export class AuthService {
             {"headers": this.headers, "params": params});
     }
 
-    logIn(loginDto: LoginDto) {
+    logIn(loginDto: LoginDto, dialog: MatDialog): void {
         let bearerToken;
         this.httpClient.post<any>(this.loginUrl, loginDto, {"headers": this.headers, observe: "response"}).subscribe((data) => {
             console.log('Attempting to log in', data);
@@ -47,7 +47,17 @@ export class AuthService {
                 }
             }
             console.log('BEARER ' + sessionStorage.getItem('Access_Token'));
-        });
+        }, error => {
+            console.log(error);
+            if (error.status === 0) {
+                dialog.open(ErrorDialogComponent, {data: {errorMessage: SERVER_DOWN}});
+            } else if (error.status === 401) {
+                dialog.open(ErrorDialogComponent, {data: {errorMessage: INCORRECT_CREDENTIALS}});
+            } else {
+                dialog.open(ErrorDialogComponent, {data: {errorMessage: 'SOMETHING_WENT_WRONG'}});
+            }
+        }
+        );
     }
 
     logOut(): void {

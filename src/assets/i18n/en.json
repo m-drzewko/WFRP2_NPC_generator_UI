@@ -103,7 +103,6 @@
         "register": "Register",
         "login": "Log in",
         "logout": "Log out",
-        "account": "Account",
         "dialog": {
             "thank_you": "Thank you for registering!",
             "main_body": "A verification email has been sent to you mailbox. Please click the link contained in the message to verify your account. When your account is verified, you will be able to log in!",
@@ -126,9 +125,13 @@
                 "TOKEN_USED": "Token already used!",
                 "TOKEN_TYPE_INVALID": "Invalid token type!",
                 "INCORRECT_PASSWORD": "Incorrect password!",
-                "SERVER_DOWN": "Server unavailable, please try again later."
+                "SERVER_DOWN": "Server unavailable, please try again later.",
+                "INCORRECT_CREDENTIALS": "Incorrect login or password."
             }
         }
+    },
+    "account": {
+        "account": "Account"
     },
     "footer": {
         "version": "version 0.5"

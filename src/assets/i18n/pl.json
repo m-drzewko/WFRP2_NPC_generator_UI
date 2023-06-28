@@ -103,7 +103,6 @@
         "register": "Zarejestruj",
         "login": "Zaloguj",
         "logout": "Wyloguj",
-        "account": "Account",
         "dialog": {
             "thank_you": "Dziękuję za zarejestrowanie!",
             "main_body": "Na twoją skrzynkę mailową wysłana została wiadomość weryfikacyjna. Kliknij w link zawarty w wiadomości aby zweryfikować swoje konto. Po zweryfikowaniu będziesz mógł się zalogować.",
@@ -126,9 +125,13 @@
                 "TOKEN_USED": "Token wykorzystany",
                 "TOKEN_TYPE_INVALID": "Niezgodny rodzaj tokenu",
                 "INCORRECT_PASSWORD": "Hasło niepoprawne",
-                "SERVER_DOWN": "Serwer niedostępny, spróbuj później."
+                "SERVER_DOWN": "Serwer niedostępny, spróbuj później.",
+                "INCORRECT_CREDENTIALS": "Nieprawidłowy login lub hasło."
             }
         }
+    },
+    "account": {
+        "account": "Konto"
     },
     "footer": {
         "version": "wersja 0.5"
