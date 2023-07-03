@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Race } from '../race';
-import { RaceService } from '../race.service';
+import { Race } from '../shared/model/race';
+import { RaceService } from '../services/race.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

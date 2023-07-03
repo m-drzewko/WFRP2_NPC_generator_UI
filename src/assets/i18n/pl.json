@@ -17,11 +17,11 @@
         "home": "Strona główna",
         "flag_of_uk": "Flaga Zjednoczonego Królestwa",
         "flag_of_pl": "Flaga Polski",
-		"race": "Rasa",
+        "race": "Rasa",
         "display_race": "Wyświetl rasy",
-        "generate" : "Generuj"
+        "generate": "Generuj"
     },
-    "display":  {
+    "display": {
         "race_names": {
             "random": "Losowa",
             "Dwarf": "Krasnolud",
@@ -78,7 +78,7 @@
         "npc": {
             "title": "Wygeneruj postać losowo",
             "paragraph1": "Użyj poniższych pól by wybrać parametry generacji. Jeśli chcesz, by postać była przygotowana całkowicie losowo, pozostaw pola na opcji \"Losowa\"",
-            "generate" : "Generuj",
+            "generate": "Generuj",
             "name": "Imię",
             "race": "Rasa",
             "gender": "Płeć",
@@ -92,6 +92,46 @@
             "server_error": "Błąd serwera!",
             "message": "Serwer nie odpowiada. Spróbuj ponownie później."
         }
+    },
+    "registration_and_login": {
+        "registration": "Zarejestruj się",
+        "registration_text": "Wypełnij poniższy formularz aby zarejestrować swoje konto.",
+        "username": "Nazwa użytkownika",
+        "email": "Email",
+        "password": "Hasło",
+        "show_password": "Pokaż hasło",
+        "register": "Zarejestruj",
+        "login": "Zaloguj",
+        "logout": "Wyloguj",
+        "dialog": {
+            "thank_you": "Dziękuję za zarejestrowanie!",
+            "main_body": "Na twoją skrzynkę mailową wysłana została wiadomość weryfikacyjna. Kliknij w link zawarty w wiadomości aby zweryfikować swoje konto. Po zweryfikowaniu będziesz mógł się zalogować.",
+            "dismiss_button": "Zamknij"
+        }
+    },
+    "shared": {
+        "error_dialog": {
+            "header": "Coś poszło nie tak!",
+            "main_body": "Kod błędu:",
+            "dismiss_button": "Zamknij",
+            "messages": {
+                "SOMETHING_WENT_WRONG": "Błąd nieznany",
+                "NO_SUCH_USER": "Użytkownik nie istnieje",
+                "USER_NOT_VERIFIED": "Użytkownik niezweryfikowany",
+                "USER_ALREADY_EXISTS": "Użytkownik już istnieje",
+                "USER_ALREADY_CONFIRMED": "Użytkownik już zweryfikowany",
+                "NO_SUCH_TOKEN": "Token nie istnieje",
+                "TOKEN_EXPIRED": "Token wygasł",
+                "TOKEN_USED": "Token wykorzystany",
+                "TOKEN_TYPE_INVALID": "Niezgodny rodzaj tokenu",
+                "INCORRECT_PASSWORD": "Hasło niepoprawne",
+                "SERVER_DOWN": "Serwer niedostępny, spróbuj później.",
+                "INCORRECT_CREDENTIALS": "Nieprawidłowy login lub hasło."
+            }
+        }
+    },
+    "account": {
+        "account": "Konto"
     },
     "footer": {
         "version": "wersja 0.5"

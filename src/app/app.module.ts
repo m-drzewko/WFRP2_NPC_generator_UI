@@ -10,6 +10,15 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { VerifyComponent } from './verify/verify.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeContentComponent } from './home-content/home-content.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { RegistrationDialogComponent } from './registration/registration-dialog/registration-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
 
 
 
@@ -19,6 +28,13 @@ import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 		AppComponent,
 		RaceDisplayComponent,
 		NpcGenerateComponent,
+  		RegistrationComponent,
+  		LoginComponent,
+  		VerifyComponent,
+    	HomeContentComponent,
+    	NavigationComponent,
+    	RegistrationDialogComponent,
+     	ErrorDialogComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -31,8 +47,9 @@ import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
 				useFactory: HttpLoaderFactory,
 				deps: [HttpClient]
 			}
-		})
-
+		}),
+  		BrowserAnimationsModule,
+		MatDialogModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

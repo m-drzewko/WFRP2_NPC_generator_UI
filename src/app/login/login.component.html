@@ -1,0 +1,19 @@
+<div class="card container mb-4">
+    <div class="card-body">
+        <h4 class="card-title">{{ 'registration_and_login.login' | translate }}</h4>
+        <div class="card-text">
+            <form [formGroup]="loginForm">
+                <p>
+                    <label for="username" class="form-label col-2">{{ 'registration_and_login.username' | translate }}</label>
+                    <input name="username" class="col-2" formControlName="username" type="text" required>
+                </p>
+                <p>
+                    <label for="password" class="form-label col-2">{{ 'registration_and_login.password' | translate }}</label>
+                    <input name="password" class="col-2" formControlName="password" [type]="showPassword ? 'text' : 'password'" required>
+                    <input name="toggle" class="col-1" type="checkbox" (click)="toggleShowPassword()">{{ 'registration_and_login.show_password' | translate }}
+                </p>
+                <button type="submit" class="btn btn-secondary" [disabled]="loginForm.invalid" (click)="attemptLogin()">{{ 'registration_and_login.login' | translate }}</button>
+            </form>
+        </div>
+    </div>
+</div>

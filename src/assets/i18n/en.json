@@ -93,6 +93,46 @@
             "message": "Server is currently unavailable. Please try again later."
         }
     },
+    "registration_and_login": {
+        "registration": "Registration",
+        "registration_text": "Please fill in the below registration form to register your account.",
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "show_password": "Show password",
+        "register": "Register",
+        "login": "Log in",
+        "logout": "Log out",
+        "dialog": {
+            "thank_you": "Thank you for registering!",
+            "main_body": "A verification email has been sent to you mailbox. Please click the link contained in the message to verify your account. When your account is verified, you will be able to log in!",
+            "dismiss_button":"Dismiss"
+        }
+    },
+    "shared": {
+        "error_dialog": {
+            "header": "Something went wrong!",
+            "main_body": "Error occurred:",
+            "dismiss_button": "Dismiss",
+            "messages": {
+                "SOMETHING_WENT_WRONG": "Unknown error",
+                "NO_SUCH_USER": "No such user exists!",
+                "USER_NOT_VERIFIED": "User not verified!",
+                "USER_ALREADY_EXISTS": "User already exists!",
+                "USER_ALREADY_CONFIRMED": "User already confirmed!",
+                "NO_SUCH_TOKEN": "Token does not exist!",
+                "TOKEN_EXPIRED": "Token expired!",
+                "TOKEN_USED": "Token already used!",
+                "TOKEN_TYPE_INVALID": "Invalid token type!",
+                "INCORRECT_PASSWORD": "Incorrect password!",
+                "SERVER_DOWN": "Server unavailable, please try again later.",
+                "INCORRECT_CREDENTIALS": "Incorrect login or password."
+            }
+        }
+    },
+    "account": {
+        "account": "Account"
+    },
     "footer": {
         "version": "version 0.5"
     }

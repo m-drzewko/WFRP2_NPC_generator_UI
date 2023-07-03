@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable, tap } from "rxjs";
-import { ListResponseObject } from "./response/list-response-object";
+import { ListResponseObject } from "../shared/response/list-response-object";
+import { HOST } from "../shared/utils";
 
 
 @Injectable({
@@ -10,16 +11,9 @@ import { ListResponseObject } from "./response/list-response-object";
 })
 export class RaceService {
 
-	private getAllRacesUrl = 'http://localhost:8080/races';
-	private postRaceUrl = 'http://localhost:8080/races/new';
+	private getAllRacesUrl = HOST + 'race/races';
 
 	constructor(private httpClient: HttpClient, private translate: TranslateService) { }
-
-	//both getRaces() and postRace() now send also a header
-	//to the backend as part of the request;
-	//this will be kept as an example for now,
-	//but will probably only come in handy later
-	//when character generation is in place
 
 	getRaces(): Observable<ListResponseObject> {
 		let headers = new HttpHeaders()
@@ -28,8 +22,8 @@ export class RaceService {
 		return this.httpClient.get<ListResponseObject>(this.getAllRacesUrl, {
 			headers: headers
 		})
-			.pipe(
-				tap(data => console.log(data))
-			);
+		.pipe(
+			tap(data => console.log(data))
+		);
 	}
 }
