@@ -1,4 +1,5 @@
 export interface Npc {
+    id: number;
     name: String;
     gender: String;
     raceName: String;
