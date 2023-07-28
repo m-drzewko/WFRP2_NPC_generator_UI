@@ -104,4 +104,12 @@ export class AuthService {
         });
         return returnString;
     }
+
+    provideToken(): string {
+        if(this.isLoggedIn) {
+            return 'Bearer ' + sessionStorage.getItem('Access_Token');
+        } else {
+            return '';
+        }
+    }
 }

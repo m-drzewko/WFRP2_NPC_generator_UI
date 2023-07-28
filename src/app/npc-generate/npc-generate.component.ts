@@ -6,6 +6,7 @@ import { Race } from '../shared/model/race';
 import { Npc } from '../shared/model/npc';
 import { SingleResponseObject } from '../shared/response/single-response-object';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../services/auth.service';
 
 @Component({
 	selector: 'app-npc-generate',
@@ -24,6 +25,7 @@ export class NpcGenerateComponent implements OnInit {
 
 	constructor(private npcService: NpcService,
 		private raceService: RaceService,
+		private authService: AuthService,
 		private formBuilder: FormBuilder) {
 		this.npcGenerateForm = this.formBuilder.nonNullable.group({
 			race: ['', Validators.required],
@@ -64,5 +66,13 @@ export class NpcGenerateComponent implements OnInit {
 	onClick(): void {
 		console.log("switching flag " + this.serverErrorFlag);
 		this.serverErrorFlag = false;
+	}
+
+	isLoggedIn(): boolean {
+		return this.authService.isLoggedIn;
+	}
+
+	saveNpc() {
+		this.npcService.saveNewNpc(this.npc);
 	}
 }
