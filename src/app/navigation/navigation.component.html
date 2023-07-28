@@ -30,14 +30,15 @@
                 <button type="button" class="nav-link active btn btn-secondary" routerLink="registration">{{ 'registration_and_login.register' | translate }}</button>
             </li>
             <li class="nav-item dropdown" *ngIf="this.authService.isLoggedIn">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"> {{ 'account.account' | translate }}
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'account.account' | translate }}</a>
+                <ul class="dropdown-menu">
                     <li>
                         <a class="dropdown-item" routerLink="">Saved NPCs</a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="">Account settings</a>
                     </li>
-                </a>
+                </ul>
             </li>
             <li class="nav-item">
                 <button type="button" *ngIf="!this.authService.isLoggedIn" class="nav-link active btn btn-secondary" routerLink="login">{{ 'registration_and_login.login' | translate }}</button>
