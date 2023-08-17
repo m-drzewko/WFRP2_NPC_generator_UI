@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { NpcGenerateComponent } from './npc-generate/npc-generate.component';
+import { NpcGenerateComponent } from './npc/npc-generate/npc-generate.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { VerifyComponent } from './verify/verify.component';
@@ -19,6 +19,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RegistrationDialogComponent } from './registration/registration-dialog/registration-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
+import { NpcsDisplayComponent } from './npc/npcs-display/npcs-display.component';
+import { NpcDetailsComponent } from './npc/npc-details/npc-details.component';
 
 
 
@@ -35,6 +37,8 @@ import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.compone
     	NavigationComponent,
     	RegistrationDialogComponent,
      	ErrorDialogComponent,
+      	NpcsDisplayComponent,
+      	NpcDetailsComponent,
 	],
 	imports: [
 		BrowserModule,

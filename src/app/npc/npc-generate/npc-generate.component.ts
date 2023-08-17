@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NpcService } from '../services/npc-service';
-import { RaceService } from '../services/race.service';
-import { Race } from '../shared/model/race';
-import { Npc } from '../shared/model/npc';
-import { SingleResponseObject } from '../shared/response/single-response-object';
+import { NpcService } from '../../services/npc-service';
+import { RaceService } from '../../services/race.service';
+import { Race } from '../../shared/model/race';
+import { Npc } from '../../shared/model/npc';
+import { SingleResponseObject } from '../../shared/response/single-response-object';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
 	selector: 'app-npc-generate',
