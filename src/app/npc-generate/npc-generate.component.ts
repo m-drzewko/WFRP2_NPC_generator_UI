@@ -46,17 +46,19 @@ export class NpcGenerateComponent implements OnInit {
 				console.log(error.message);
 				this.serverErrorFlag = true;
 			}
-		)
+		);
 	}
 
 	onSubmit(): void {
 		console.log(this.npcGenerateForm.value);
-		this.npcService.generateNpc(this.npcGenerateForm.get(["race"])?.value, this.npcGenerateForm.get(["gender"])?.value).subscribe(
+		this.npcService.generateNpc(
+			this.npcGenerateForm.get(["race"])?.value, 
+			this.npcGenerateForm.get(["gender"])?.value).subscribe(
 			(response: SingleResponseObject) => {
 				console.log(response);
 				this.npc = response.object;
 				this.isNpcGenerated = true;
-			}, 
+			},
 			(error: HttpErrorResponse) => {
 				console.log(error);
 			}
