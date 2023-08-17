@@ -29,7 +29,11 @@ const routes: Routes = [
 		component: VerifyComponent
 	},
 	{
-		path:"",
+		path: "",
+		component: HomeContentComponent
+	},
+	{
+		path: "**",
 		component: HomeContentComponent
 	}
 ];
