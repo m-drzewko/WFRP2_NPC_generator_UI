@@ -27,7 +27,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ 'account.account' | translate }}</a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="dropdown-item" routerLink="">Saved NPCs</a>
+                        <a class="dropdown-item" routerLink="npcs-display">Saved NPCs</a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="">Account settings</a>
@@ -38,12 +38,6 @@
                 <button type="button" *ngIf="!this.authService.isLoggedIn" class="nav-link active btn btn-secondary" routerLink="login">{{ 'registration_and_login.login' | translate }}</button>
                 <button type="button" *ngIf="this.authService.isLoggedIn" class="nav-link active btn btn-secondary" (click)="doLogout()">{{ 'registration_and_login.logout' | translate }}</button>
             </li>
-            <!-- <li class="nav-item">
-                <button type="button" class="nav-link active btn btn-secondary" (click)="clickEnglish()"><img src="assets\images\united-kingdom.png" alt="{{ 'navigation.flag_of_uk' | translate }}"></button>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="nav-link active btn btn-secondary" (click)="clickPolish()"><img src="assets\images\poland.png" alt="{{ 'navigation.flag_of_pl' | translate }}"></button>
-            </li> -->
         </ul>
         <div class="nav-item d-flex justify-content-evenly">
             <button type="button" class="nav-link active btn btn-secondary" (click)="clickEnglish()"><img src="assets\images\united-kingdom.png" alt="{{ 'navigation.flag_of_uk' | translate }}"></button>
