@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Observable } from "rxjs";
 import { SingleResponseObject } from "../shared/response/single-response-object";
@@ -16,12 +16,11 @@ export class NpcService {
 
 	private generateNpcUrl = HOST + 'npc/generate';
 	private saveNpcUrl = HOST + 'user/auth/npc/save';
-	private pageOfNpcsUrl = HOST + 'auth/npc/getall';
+	private pageOfNpcsUrl = HOST + 'user/auth/npc/getall';
 
 	private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 	private pageOfNpcs : Npc[]= [];
-	private totalPagesOfNpcs = 0;
 
 	constructor(private httpClient: HttpClient,
 		private authService: AuthService,
@@ -59,25 +58,22 @@ export class NpcService {
 		);
 	}
 
-	getPageOfNpcs(page?: number) {
-
-		if (page === null) {
-			page = 0;
-		}
+	requestPageOfNpcs(page: number) {
+		page = page - 1;	
 
 		let headers = this.headers;
-		headers.set('Authorization', this.authService.provideToken());
+		headers = headers.set('Authorization', this.authService.provideToken());
 
 		let url = this.pageOfNpcsUrl + "?page=" + page;
 
-		this.httpClient.get<PagedResponseObject>(url, {"headers": headers}).subscribe(
-			(data) => {
-				this.pageOfNpcs = data.object;
-				this.totalPagesOfNpcs = data.pages;
-			}, error => {
-				console.log(error);
-				// TODO implement displaying error dialog
-			}
-		)
+		return this.httpClient.get<PagedResponseObject>(url, {"headers": headers});
+	}
+
+	getPageOfNpcs() {
+		return this.pageOfNpcs;
+	}
+
+	setPageOfNpcs(npcs: Npc[]) {
+		this.pageOfNpcs = npcs;
 	}
 }
