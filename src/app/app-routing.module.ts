@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { NpcsDisplayComponent } from './npc/npcs-display/npcs-display.component';
+import { AuthenticationGuard } from './shared/guards/authentication.guard';
 
 const routes: Routes = [
 	{
@@ -31,7 +32,8 @@ const routes: Routes = [
 	},
 	{
 		path: "npcs-display",
-		component: NpcsDisplayComponent
+		component: NpcsDisplayComponent,
+		canActivate: [AuthenticationGuard]
 	},
 	{
 		path: "",
