@@ -20,7 +20,7 @@ export class NpcService {
 
 	private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-	private pageOfNpcs : Npc[]= [];
+	pageOfNpcs: Npc[] = [];
 
 	constructor(private httpClient: HttpClient,
 		private authService: AuthService,
@@ -69,11 +69,11 @@ export class NpcService {
 		return this.httpClient.get<PagedResponseObject>(url, {"headers": headers});
 	}
 
-	getPageOfNpcs() {
-		return this.pageOfNpcs;
-	}
+	// getPageOfNpcs() {
+	// 	return this.pageOfNpcs;
+	// }
 
-	setPageOfNpcs(npcs: Npc[]) {
-		this.pageOfNpcs = npcs;
-	}
+	// setPageOfNpcs(npcs: Npc[]) {
+	// 	this.pageOfNpcs = npcs;
+	// }
 }

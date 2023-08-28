@@ -23,13 +23,13 @@ export class LoginComponent {
         private authService: AuthService,
         private router: Router,
         public dialog: MatDialog) {
-        if(authService.isLoggedIn) {
+        if (authService.isLoggedIn) {
             this.router.navigate([""]);
         }
         this.loginForm = formBuilder.nonNullable.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
-    })
+        })
     }
 
     toggleShowPassword() {
