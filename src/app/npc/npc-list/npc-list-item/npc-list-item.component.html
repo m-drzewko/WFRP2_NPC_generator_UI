@@ -1,0 +1,32 @@
+<a style="cursor: pointer;">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title" style="font-weight: 500;">{{ npc.name }}</h3>
+            <div class="card-text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            {{ 'display.npc.race' | translate }}: {{ 'display.race_names.' + npc.raceName | translate}}
+                        </div>
+                        <div class="col">
+                            {{ 'display.npc.gender' | translate }}: {{ 'display.npc.' + npc.gender | translate }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ 'display.npc.hairColor' | translate }}: {{ 'display.colors.' + npc.hairColor | translate }}
+                        </div>
+                        <div class="col">
+                            {{ 'display.npc.eyeColor' | translate }}: {{ 'display.colors.' + npc.eyeColor | translate }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{ 'display.npc.height' | translate }}: {{ npc.height }} cm</div>
+                        <div class="col">{{ 'display.npc.weight' | translate }}: {{ npc.weight }} kg</div>
+                        <div class="col">{{ 'display.npc.age' | translate }}: {{ npc.age }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>

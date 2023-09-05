@@ -22,6 +22,7 @@ import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.compone
 import { NpcsDisplayComponent } from './npc/npcs-display/npcs-display.component';
 import { NpcDetailsComponent } from './npc/npc-details/npc-details.component';
 import { NpcListComponent } from './npc/npc-list/npc-list.component';
+import { NpcListItemComponent } from './npc/npc-list/npc-list-item/npc-list-item.component';
 
 
 
@@ -40,7 +41,8 @@ import { NpcListComponent } from './npc/npc-list/npc-list.component';
      	ErrorDialogComponent,
       	NpcsDisplayComponent,
       	NpcDetailsComponent,
-       	NpcListComponent
+       	NpcListComponent,
+        NpcListItemComponent
 	],
 	imports: [
 		BrowserModule,
