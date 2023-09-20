@@ -8,6 +8,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { NpcsDisplayComponent } from './npc/npcs-display/npcs-display.component';
 import { AuthenticationGuard } from './shared/guards/authentication.guard';
+import { NpcDetailsComponent } from './npc/npcs-display/npc-details/npc-details.component';
 
 const routes: Routes = [
 	{
@@ -33,7 +34,13 @@ const routes: Routes = [
 	{
 		path: "npcs-display",
 		component: NpcsDisplayComponent,
-		canActivate: [AuthenticationGuard]
+		canActivate: [AuthenticationGuard],
+		children: [
+			{
+				path: ":id",
+				component: NpcDetailsComponent
+			}
+		]
 	},
 	{
 		path: "",
