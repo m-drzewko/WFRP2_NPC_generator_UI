@@ -35,7 +35,15 @@ export class NpcsDisplayComponent implements OnInit {
     }
 
     changePage(page: number) {
-        this.npcService.requestPageOfNpcs(page);
+        this.npcService.requestPageOfNpcs(page).subscribe(
+            (data) => {
+                this.npcService.pageOfNpcs = data.object;
+                this.currentPage = page;
+                console.log(this.currentPage);
+            }, error => {
+                console.log(error);
+            }
+        );
     }
 
 }
