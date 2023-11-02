@@ -1,10 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <app-npc-list></app-npc-list>
+            <app-npc-list (emitter)="changeFlag($event)"></app-npc-list>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="!(editFlag)">
             <app-empty></app-empty>
+        </div>
+        <div class="col" *ngIf="editFlag">
+            <app-npc-edit></app-npc-edit>
         </div>
     </div>
     <nav aria-label="Page navigation">

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NpcService } from 'src/app/services/npc-service';
+import { Npc } from 'src/app/shared/model/npc';
 
 @Component({
     selector: 'app-npcs-display',
@@ -12,6 +13,7 @@ export class NpcsDisplayComponent implements OnInit {
     pages: number[] = [];
     currentPage = 1;
     totalPagesOfNpcs = 0;
+    @Input() editFlag = false;
 
     constructor(private npcService: NpcService,
         private httpClient: HttpClient) { }
@@ -40,10 +42,15 @@ export class NpcsDisplayComponent implements OnInit {
                 this.npcService.pageOfNpcs = data.object;
                 this.currentPage = page;
                 console.log(this.currentPage);
+                this.editFlag = false;
             }, error => {
                 console.log(error);
             }
         );
+    }
+
+    changeFlag(event: any) {
+        this.editFlag = true;
     }
 
 }

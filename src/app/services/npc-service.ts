@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { SingleResponseObject } from "../shared/response/single-response-object";
 import { HOST } from "../shared/utils";
 import { Npc } from "../shared/model/npc";
@@ -21,6 +21,10 @@ export class NpcService {
 	private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 	pageOfNpcs: Npc[] = [];
+
+	selectedNpc!: Npc;
+
+	selected$ = new BehaviorSubject<Npc>(this.selectedNpc);
 
 	constructor(private httpClient: HttpClient,
 		private authService: AuthService,
@@ -69,11 +73,14 @@ export class NpcService {
 		return this.httpClient.get<PagedResponseObject>(url, {"headers": headers});
 	}
 
-	// getPageOfNpcs() {
-	// 	return this.pageOfNpcs;
-	// }
+	setSelectedNpc(index: number) {
+		this.selectedNpc = this.pageOfNpcs[index];
+		this.selected$.next(this.selectedNpc);
+		console.log(this.selectedNpc);
+	}
 
-	// setPageOfNpcs(npcs: Npc[]) {
-	// 	this.pageOfNpcs = npcs;
-	// }
+	getSelectedNpc(): Observable<Npc> {
+		return this.selected$.asObservable();
+	}
+
 }

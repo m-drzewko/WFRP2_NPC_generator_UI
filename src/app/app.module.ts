@@ -24,6 +24,7 @@ import { NpcDetailsComponent } from './npc/npcs-display/npc-details/npc-details.
 import { NpcListComponent } from './npc/npcs-display/npc-list/npc-list.component';
 import { NpcListItemComponent } from './npc/npcs-display/npc-list/npc-list-item/npc-list-item.component';
 import { EmptyComponent } from './shared/empty/empty.component';
+import { NpcEditComponent } from './npc/npcs-display/npc-edit/npc-edit.component';
 
 
 
@@ -44,7 +45,8 @@ import { EmptyComponent } from './shared/empty/empty.component';
       	NpcDetailsComponent,
        	NpcListComponent,
         NpcListItemComponent,
-        EmptyComponent
+        EmptyComponent,
+        NpcEditComponent
 	],
 	imports: [
 		BrowserModule,

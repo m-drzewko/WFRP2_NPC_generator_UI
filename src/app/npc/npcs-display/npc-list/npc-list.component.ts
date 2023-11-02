@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { Component, DoCheck, EventEmitter, OnInit, Output } from '@angular/core';
 import { NpcService } from 'src/app/services/npc-service';
 import { Npc } from 'src/app/shared/model/npc';
 
@@ -8,6 +8,8 @@ import { Npc } from 'src/app/shared/model/npc';
     styleUrls: ['./npc-list.component.css']
 })
 export class NpcListComponent implements OnInit, DoCheck {
+
+    @Output() emitter = new EventEmitter();
 
     pageOfNpcs: Npc[] = [];
 
@@ -19,6 +21,12 @@ export class NpcListComponent implements OnInit, DoCheck {
 
     ngDoCheck(): void {
         this.pageOfNpcs = this.npcService.pageOfNpcs;
+    }
+
+    onClick(index: number) {
+        console.log("click: " + index);
+        this.npcService.setSelectedNpc(index);
+        this.emitter.emit(true);
     }
 
 }
