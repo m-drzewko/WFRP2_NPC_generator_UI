@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "wfrp_npc_generatorr:build:production"
+              "buildTarget": "wfrp_npc_generatorr:build:production"
             },
             "development": {
-              "browserTarget": "wfrp_npc_generatorr:build:development"
+              "buildTarget": "wfrp_npc_generatorr:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wfrp_npc_generatorr:build"
+            "buildTarget": "wfrp_npc_generatorr:build"
           }
         },
         "test": {
